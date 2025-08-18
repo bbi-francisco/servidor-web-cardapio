@@ -1,0 +1,71 @@
+{
+    "appBarTheme": {
+        "color": "#F0932E",
+        "textColor": "#FFFFFF",
+        "btnAppBarTheme": {
+            "color": "#000002",
+            "textColor": "#FFFFFF",
+            "destaqueColor": "#039c1a"
+        },
+        "searchBarTheme": {
+            "color": "#000002",
+            "textColor": "#FFFFFF"
+        }
+    },
+    "opcionaisTheme": {
+        "btnOpcionalSelecionadoTheme": {
+            "color": "#841D33",
+            "textColor": "#FFFFFF"
+        },
+        "btnOpcionalTheme": {
+            "color": "#841D33",
+            "textColor": "#FFFFFF"
+        }
+    },
+    "backgroundTheme": {
+        "color": "#ffffff",
+        "textColor": "#000002",
+        "btnBackgroundTheme": {
+            "color": "#000002",
+            "textColor": "#FFFFFF"
+        }
+    },
+    "dialogTheme": {
+        "color": "#FFFFFF",
+        "textColor": "#000000",
+        "dialogItemTheme": {
+            "textColor": "#000000",
+            "highlightColor": "#04302A"
+        },
+        "btnDialogTheme": {
+            "color": "#000002",
+            "textColor": "#FFFFFF"
+        },
+        "dialogHeaderTheme": {
+            "color": "#F4511E",
+            "textColor": "#FFFFFF"
+        }
+    },
+    "itemPedidoTheme": {
+        "textColor": "#000000",
+        "backgroundColor": "#FFFFFF",
+        "subitemTitleColor": "#A02601"
+    },
+    "consultaTheme": {
+        "textColor": "#000000",
+        "backgroundColor": "#FFFFFF",
+        "subitemTitleColor": "#A02601"
+    },
+    "produtoItemTheme": {
+        "btnProdutoTheme": {
+            "color": "#FFFFFF",
+            "textColor": "#841D33"
+        },
+        "color": "#000002",
+        "textColor": "#FFFFFF"
+    },
+    "menuSubgrupoTheme": {
+        "selectedColor": "#FFFFFF",
+        "color": "#000002"
+    }
+}
