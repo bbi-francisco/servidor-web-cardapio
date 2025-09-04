@@ -19,7 +19,7 @@ public class Generator {
 	private static final Logger log = Logger.getLogger(Generator.class);
 	
 	public static final String FECHAMENTO = "GEN_TBCOMANDA_FECHAMENTO";
-	public static final String PIZZA = "GEN_TBCOMANDA_PIZZA";
+	public static final String PIZZA = "GEN_ID_PIZZA";
 	
 	public String gerarId(String generator) throws SQLException {
 		String id = "";

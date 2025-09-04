@@ -147,4 +147,6 @@ Resposta HTTP:
  web_cardapio.br.com.bitbyte.controllers.ComandasController 2025-07-15 15:07:20,347 -- ERROR -- org.firebirdsql.jdbc.field.TypeConversionException: Error converting to int.  
  web_cardapio.br.com.bitbyte.controllers.ComandasController 2025-07-15 15:08:45,420 -- ERROR -- org.firebirdsql.jdbc.field.TypeConversionException: Error converting to int.  
  web_cardapio.br.com.bitbyte.controllers.ComandasController 2025-07-15 15:09:31,250 -- ERROR -- org.firebirdsql.jdbc.field.TypeConversionException: Error converting to int.  
+ web_cardapio.br.com.bitbyte.sqlcommons.Generator 2025-09-02 08:51:10,687 -- ERROR -- java.sql.SQLException: invalid request BLR at offset 55; generator GEN_TBCOMANDA_PIZZA is not defined [SQLState:HY000, ISC error code:335544343] 
+ web_cardapio.br.com.bitbyte.controllers.PedidosController 2025-09-02 08:51:10,688 -- ERROR -- Não foi possível enviar o pedido. Erro ao gerar id para o item. java.sql.SQLException: invalid request BLR at offset 55; generator GEN_TBCOMANDA_PIZZA is not defined [SQLState:HY000, ISC error code:335544343] 
  
