@@ -17,7 +17,7 @@ import web_cardapio.br.com.bitbyte.models.bbifood.ComandaBBIFood;
 import web_cardapio.br.com.bitbyte.models.bbifood.ItemBBIFood;
 import web_cardapio.br.com.bitbyte.models.bbifood.PedidoBBIFood;
 import web_cardapio.br.com.bitbyte.sqlcommons.Generator;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 
 @Repository
 public class MontagemDao {
@@ -108,7 +108,7 @@ public class MontagemDao {
 				stmt.setString(16, itemPedido.getId());
 				stmt.executeUpdate();
 				
-				if(!CollectionsUtils.isNullOrEmpty(itensCombo)) 
+				if(!ListUtils.isNullOrEmpty(itensCombo)) 
 				{
 					comboDao.setSeqPeso(seqPeso);
 					comboDao.insertItensCombo(itemPedido, pedido);

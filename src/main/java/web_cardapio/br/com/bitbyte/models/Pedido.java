@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import web_cardapio.br.com.bitbyte.utils.BigDecimalUtils;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 
 public class Pedido{
 		
@@ -20,7 +20,7 @@ public class Pedido{
 		return this;
 	}
 	public List<Item> getItens() {
-		return CollectionsUtils.getEmptyIfNull(itens);
+		return ListUtils.getEmptyIfNull(itens);
 	}
 	public Pedido setItens(List<Item> lstItens) {
 		this.itens = lstItens;

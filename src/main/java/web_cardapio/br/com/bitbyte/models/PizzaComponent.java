@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import web_cardapio.br.com.bitbyte.models.bbifood.ItemBBIFood;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 
 public class PizzaComponent {
 	
@@ -15,7 +15,7 @@ public class PizzaComponent {
 	}
 	
 	public String getCodigosPizzas() {
-		if(CollectionsUtils.isNullOrEmpty(sabores)) {
+		if(ListUtils.isNullOrEmpty(sabores)) {
 			return "";
 		}
 		List<String> codigos = sabores.stream()
@@ -26,7 +26,7 @@ public class PizzaComponent {
 	}
 	
 	public int getQuantidadePizza() {
-		return CollectionsUtils.getEmptyIfNull(sabores).size();
+		return ListUtils.getEmptyIfNull(sabores).size();
 	}
 
 }

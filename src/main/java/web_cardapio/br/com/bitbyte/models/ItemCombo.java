@@ -5,7 +5,7 @@ import java.util.List;
 
 import web_cardapio.br.com.bitbyte.enums.TipoValor;
 import web_cardapio.br.com.bitbyte.utils.BigDecimalUtils;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
 public class ItemCombo
@@ -105,7 +105,7 @@ public class ItemCombo
 
 	public List<Variacao> getVariacoes()
 	{
-		return CollectionsUtils.getEmptyIfNull(variacoes);
+		return ListUtils.getEmptyIfNull(variacoes);
 	}
 
 	public ItemCombo setVariacoes(List<Variacao> variacoes)

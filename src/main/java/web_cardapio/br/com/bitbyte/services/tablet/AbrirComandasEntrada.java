@@ -26,7 +26,7 @@ import web_cardapio.br.com.bitbyte.models.Entrada;
 import web_cardapio.br.com.bitbyte.models.bbifood.ComandaBBIFood;
 import web_cardapio.br.com.bitbyte.repositories.BbiParamService;
 import web_cardapio.br.com.bitbyte.results.EntradaResult;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 
 @Service
 public class AbrirComandasEntrada {
@@ -96,7 +96,7 @@ public class AbrirComandasEntrada {
 				}
 			}
 
-			if (CollectionsUtils.isNullOrEmpty(comandasInvalidas) && !CollectionsUtils.isNullOrEmpty(comandas)) {
+			if (ListUtils.isNullOrEmpty(comandasInvalidas) && !ListUtils.isNullOrEmpty(comandas)) {
 
 				List<ComandaBBIFood> comandasBBIFood = comandas.stream().map(com -> new ComandaBBIFood(com))
 						.collect(Collectors.toList());

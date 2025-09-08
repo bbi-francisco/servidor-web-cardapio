@@ -21,7 +21,7 @@ import web_cardapio.br.com.bitbyte.models.Produto;
 import web_cardapio.br.com.bitbyte.models.Promocao;
 import web_cardapio.br.com.bitbyte.models.Restricao;
 import web_cardapio.br.com.bitbyte.models.TamanhoPizza;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 
 @Repository
 public class ProdutoDao
@@ -128,7 +128,7 @@ public class ProdutoDao
 		
 		List<Produto> produtos = getProdutos(where);
 		
-		if(CollectionsUtils.isNullOrEmpty(produtos)) {
+		if(ListUtils.isNullOrEmpty(produtos)) {
 			return null;
 		}
 		

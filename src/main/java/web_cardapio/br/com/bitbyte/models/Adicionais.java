@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 
 public class Adicionais {
 	
@@ -15,7 +15,7 @@ public class Adicionais {
 	private List<Item> sabores;
 	
 	public List<Variacao> getVariacoes() {
-		return CollectionsUtils.getEmptyIfNull(variacoes);
+		return ListUtils.getEmptyIfNull(variacoes);
 	}
 
 	public Adicionais setVariacoes(List<Variacao> variacoes) {
@@ -24,7 +24,7 @@ public class Adicionais {
 	}
 	
 	public List<Ingrediente> getListAcrescentar(){
-		return CollectionsUtils.getEmptyIfNull(listAcrescentar);
+		return ListUtils.getEmptyIfNull(listAcrescentar);
 	}
 	
 	public Adicionais setListAcrescentar(List<Ingrediente> acrescentar) {
@@ -33,7 +33,7 @@ public class Adicionais {
 	}
 	
 	public List<Ingrediente> getListRetirar(){
-		return CollectionsUtils.getEmptyIfNull(listRetirar);
+		return ListUtils.getEmptyIfNull(listRetirar);
 	}
 	
 	public Adicionais setListRetirar(List<Ingrediente> retirar) {
@@ -54,7 +54,7 @@ public class Adicionais {
 
 	public void setIngredientes(List<Ingrediente> ingredientes)
 	{
-		if(CollectionsUtils.isNullOrEmpty(ingredientes)) {
+		if(ListUtils.isNullOrEmpty(ingredientes)) {
 			this.listAcrescentar = new ArrayList<>();
 			this.listRetirar = new ArrayList<>();
 			return;
@@ -71,7 +71,7 @@ public class Adicionais {
 	
 	public List<Item> getItensMontagem()
 	{
-		return CollectionsUtils.getEmptyIfNull(itensMontagem);
+		return ListUtils.getEmptyIfNull(itensMontagem);
 	}
 
 	public Adicionais setItensMontagem(List<Item> itensMontagem)
@@ -81,7 +81,7 @@ public class Adicionais {
 	}
 
 	public List<Item> getSabores() {
-		return CollectionsUtils.getEmptyIfNull(sabores);
+		return ListUtils.getEmptyIfNull(sabores);
 	}
 
 	public Adicionais setSabores(List<Item> sabores) {

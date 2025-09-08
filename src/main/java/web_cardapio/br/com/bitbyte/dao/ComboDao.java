@@ -28,7 +28,7 @@ import web_cardapio.br.com.bitbyte.models.bbifood.ItemBBIFood;
 import web_cardapio.br.com.bitbyte.models.bbifood.PedidoBBIFood;
 import web_cardapio.br.com.bitbyte.models.bbifood.VariacaoBBIFood;
 import web_cardapio.br.com.bitbyte.sqlcommons.Generator;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.MapAddHelper;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
@@ -196,7 +196,7 @@ public class ComboDao
 			return "";
 		}
 		List<VariacaoBBIFood> variacoes = adicionais.getVariacoes();
-		if(CollectionsUtils.isNullOrEmpty(variacoes)) {
+		if(ListUtils.isNullOrEmpty(variacoes)) {
 			return "";
 		}
 		StringBuilder sb = new StringBuilder();

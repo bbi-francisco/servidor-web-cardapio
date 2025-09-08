@@ -3,7 +3,7 @@ package web_cardapio.br.com.bitbyte.results;
 import java.util.List;
 
 import web_cardapio.br.com.bitbyte.models.Comanda;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 
 public class ComandaValidationResult {
 	
@@ -12,7 +12,7 @@ public class ComandaValidationResult {
 	private int status;
 
 	public List<Comanda> getComandas() {
-		return CollectionsUtils.getEmptyIfNull(comandas);
+		return ListUtils.getEmptyIfNull(comandas);
 	}
 
 	public ComandaValidationResult setComandas(List<Comanda> comandas) {

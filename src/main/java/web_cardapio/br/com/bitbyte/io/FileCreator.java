@@ -2,7 +2,7 @@ package web_cardapio.br.com.bitbyte.io;
 
 import java.io.File;
 import java.util.List;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.StringFormatterBuilder;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
@@ -16,7 +16,7 @@ public class FileCreator
 	}
 	
 	public List<String> getAllowedFormats(){
-		return CollectionsUtils.getEmptyIfNull(allowedFormats);
+		return ListUtils.getEmptyIfNull(allowedFormats);
 	}
 	
 	public FileCreator setAllowedFormats(List<String> allowedFormats) {

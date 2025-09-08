@@ -16,7 +16,7 @@ import web_cardapio.br.com.bitbyte.models.Atendente;
 import web_cardapio.br.com.bitbyte.models.Comanda;
 import web_cardapio.br.com.bitbyte.models.Item;
 import web_cardapio.br.com.bitbyte.sqlcommons.Generator;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 
 @Repository
 public class ContaDao {
@@ -33,7 +33,7 @@ public class ContaDao {
 	public void fecharConta(Comanda comanda) throws BBIException, SQLException 
 	{
 		List<Item> itensPedidos = pedidosDao.getItensPedido(comanda);
-		if(CollectionsUtils.isNullOrEmpty(itensPedidos)) {
+		if(ListUtils.isNullOrEmpty(itensPedidos)) {
 			throw new ComandaSemItensException("A conta não foi fechada. A comanda "+comanda.getNumero()+ " não possui itens. ");
 		}	
 		

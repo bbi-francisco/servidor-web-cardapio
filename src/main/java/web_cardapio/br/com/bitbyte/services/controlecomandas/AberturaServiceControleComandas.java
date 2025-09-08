@@ -27,7 +27,7 @@ import web_cardapio.br.com.bitbyte.repositories.BbiParamService;
 import web_cardapio.br.com.bitbyte.repositories.ParametrosService;
 import web_cardapio.br.com.bitbyte.results.ComandaValidationResult;
 import web_cardapio.br.com.bitbyte.services.interfaces.ValidarComandaService;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 
 @Service
 public class AberturaServiceControleComandas implements ValidarComandaService{
@@ -59,7 +59,7 @@ public class AberturaServiceControleComandas implements ValidarComandaService{
 	@Override
 	public ComandaValidationResult validar(List<Comanda> comandas) throws SQLException, BBIException 
 	{
-		if(CollectionsUtils.isNullOrEmpty(comandas)) {
+		if(ListUtils.isNullOrEmpty(comandas)) {
 			throw new IllegalArgumentException("Nenhuma comanda recebida para validação. ");
 		}
 		

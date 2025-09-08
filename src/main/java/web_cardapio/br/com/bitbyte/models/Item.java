@@ -5,7 +5,7 @@ import java.util.List;
 
 import web_cardapio.br.com.bitbyte.interfaces.Quantificavel;
 import web_cardapio.br.com.bitbyte.utils.BigDecimalUtils;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
 public class Item implements Quantificavel
@@ -136,7 +136,7 @@ public class Item implements Quantificavel
 	}
 
 	public List<Item> getSabores() {
-		return CollectionsUtils.getEmptyIfNull(sabores);
+		return ListUtils.getEmptyIfNull(sabores);
 	}
 
 	public Item setSabores(List<Item> sabores) 

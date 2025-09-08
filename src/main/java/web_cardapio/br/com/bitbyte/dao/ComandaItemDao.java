@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 
 import web_cardapio.br.com.bitbyte.connection.ConnectionFactory;
 import web_cardapio.br.com.bitbyte.models.bbifood.PedidoBBIFood;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
 @Repository
@@ -51,7 +51,7 @@ public class ComandaItemDao
 				.map(i-> "'" + i.getId() + "'")
 				.collect(Collectors.toSet());
 		
-		if(CollectionsUtils.isNullOrEmpty(idsList)) {
+		if(ListUtils.isNullOrEmpty(idsList)) {
 			return Collections.emptyList();
 		}
 		

@@ -7,7 +7,7 @@ import java.util.List;
 
 import web_cardapio.br.com.bitbyte.interfaces.Identificavel;
 import web_cardapio.br.com.bitbyte.interfaces.Quantificavel;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
 public class Produto implements Quantificavel, Identificavel<String>{
@@ -105,7 +105,7 @@ public class Produto implements Quantificavel, Identificavel<String>{
 	}
 
 	public List<Ingrediente> getIngredientes() {
-		return CollectionsUtils.getEmptyIfNull(ingredientes);
+		return ListUtils.getEmptyIfNull(ingredientes);
 	}
 
 	public void setIngredientes(List<Ingrediente> ingredientes) {
@@ -113,7 +113,7 @@ public class Produto implements Quantificavel, Identificavel<String>{
 	}
 
 	public List<ItemCombo> getItensCombo() {
-		return CollectionsUtils.getEmptyIfNull(itensCombo);
+		return ListUtils.getEmptyIfNull(itensCombo);
 	}
 
 	public void setItensCombo(List<ItemCombo> itensCombo) {
@@ -121,7 +121,7 @@ public class Produto implements Quantificavel, Identificavel<String>{
 	}
 
 	public List<Variacao> getVariacoes() {
-		return CollectionsUtils.getEmptyIfNull(variacoes);
+		return ListUtils.getEmptyIfNull(variacoes);
 	}
 
 	public void setVariacoes(List<Variacao> lstVariacoes) {
@@ -146,7 +146,7 @@ public class Produto implements Quantificavel, Identificavel<String>{
 	}
 
 	public List<Promocao> getPromocoes() {
-		return CollectionsUtils.getEmptyIfNull(promocoes);
+		return ListUtils.getEmptyIfNull(promocoes);
 	}
 
 	public void setPromocoes(List<Promocao> promocoes) {
@@ -154,7 +154,7 @@ public class Produto implements Quantificavel, Identificavel<String>{
 	}
 
 	public List<Restricao> getRestricoes() {
-		return CollectionsUtils.getEmptyIfNull(restricoes);
+		return ListUtils.getEmptyIfNull(restricoes);
 	}
 
 	public void setRestricoes(List<Restricao> restricoes) {
@@ -210,7 +210,7 @@ public class Produto implements Quantificavel, Identificavel<String>{
 	}
 
 	public List<String> getImages() {
-		return CollectionsUtils.getEmptyIfNull(images);
+		return ListUtils.getEmptyIfNull(images);
 	}
 
 	public void setImages(List<String> images) {

@@ -3,7 +3,7 @@ package web_cardapio.br.com.bitbyte.results;
 import java.util.List;
 
 import web_cardapio.br.com.bitbyte.models.Comanda;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
 public class EntradaResult {
@@ -15,7 +15,7 @@ public class EntradaResult {
 	private boolean ok;
 
 	public List<Comanda> getComandasInvalidas() {
-		return CollectionsUtils.getEmptyIfNull(comandasInvalidas);
+		return ListUtils.getEmptyIfNull(comandasInvalidas);
 	}
 
 	public EntradaResult setComandasInvalidas(List<Comanda> comandaInvalida) {
@@ -24,7 +24,7 @@ public class EntradaResult {
 	}
 
 	public List<Comanda> getComandasEmAberto() {
-		return CollectionsUtils.getEmptyIfNull(comandasEmAberto);
+		return ListUtils.getEmptyIfNull(comandasEmAberto);
 	}
 
 	public EntradaResult setComandasEmAberto(List<Comanda> comandasEmAberto) {
@@ -42,7 +42,7 @@ public class EntradaResult {
 	}
 
 	public List<Comanda> getComandasAbertas() {
-		return CollectionsUtils.getEmptyIfNull(comandasAbertas);
+		return ListUtils.getEmptyIfNull(comandasAbertas);
 	}
 
 	public EntradaResult setComandasAbertas(List<Comanda> comandasAbertas) {

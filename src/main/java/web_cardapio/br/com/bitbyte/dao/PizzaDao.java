@@ -1,5 +1,7 @@
 package web_cardapio.br.com.bitbyte.dao;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,6 +24,7 @@ import web_cardapio.br.com.bitbyte.models.bbifood.AdicionaisBBIFood;
 import web_cardapio.br.com.bitbyte.models.bbifood.ComandaBBIFood;
 import web_cardapio.br.com.bitbyte.models.bbifood.ItemBBIFood;
 import web_cardapio.br.com.bitbyte.sqlcommons.Generator;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.MapAddHelper;
 
 @Repository
@@ -53,7 +56,11 @@ public class PizzaDao {
 		{
 			AdicionaisBBIFood adicionais = itemPedido.getAdicionais();
 			List<ItemBBIFood> sabores = adicionais.getSabores();
-			for(ItemBBIFood sabor : adicionais.getSabores())
+			
+			int sizeSabores = ListUtils.size(sabores);
+			BigDecimal qtd = BigDecimal.valueOf(1).divide(BigDecimal.valueOf(sizeSabores), 3, RoundingMode.HALF_UP);
+			
+			for(ItemBBIFood sabor : sabores)
 			{
 				AdicionaisBBIFood adicionaisSabor = sabor.getAdicionais();
 				if(!adicionaisSabor.getIngredientes().isEmpty()) {
@@ -66,10 +73,9 @@ public class PizzaDao {
 				stmt.setInt(2, ++seq);
 				stmt.setString(3, sabor.getCodigo());
 				
-				double qtd = (double) sabor.getQtd() / 
-						getTotalQuantity(sabores);
 				
-				stmt.setDouble(4, qtd);
+				
+				stmt.setBigDecimal(4, qtd);
 				stmt.setInt(5, sabor.getIdIngre());
 				stmt.executeUpdate();
 			}

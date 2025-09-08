@@ -32,7 +32,7 @@ import web_cardapio.br.com.bitbyte.models.bbifood.PedidoBBIFood;
 import web_cardapio.br.com.bitbyte.models.bbifood.VariacaoBBIFood;
 import web_cardapio.br.com.bitbyte.services.AdicionaisComandaService;
 import web_cardapio.br.com.bitbyte.sqlcommons.Generator;
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.ItemPriceCalculation;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
@@ -72,6 +72,7 @@ public class PedidosDao {
 		ComandaBBIFood comanda = pedido.getComanda();
 		
 		int seqPeso = comandaItemDao.getSeqPeso(comanda.getNumero());
+		
 		for(ItemBBIFood itemPedido : itensPedido)
 		{
 			if(itemPedido.isAcessorio()) {
@@ -79,7 +80,7 @@ public class PedidosDao {
 				continue;
 			}
 			AdicionaisBBIFood adicionais = itemPedido.getAdicionais();
-			if(CollectionsUtils.hasItens(adicionais.getItensMontagem())) 
+			if(ListUtils.hasItens(adicionais.getItensMontagem())) 
 			{
 				montagemDao.insertMontagem(pedido, itemPedido);
 				continue;
@@ -124,7 +125,10 @@ public class PedidosDao {
 				BigDecimal valorIngre = new ItemPriceCalculation()
 						.getValorIngredientes(itemPedido);
 				
-				BigDecimal valor = valorIngre.add(itemPedido.getVrUnit());
+				BigDecimal valorSabores = new ItemPriceCalculation()
+						.getValorAdicionaisSabores(itemPedido);
+				
+				BigDecimal valor = valorIngre.add(itemPedido.getVrUnit()).add(valorSabores);
 				stmt.setBigDecimal(7, valor);
 				
 				
@@ -134,7 +138,7 @@ public class PedidosDao {
 				stmt.setInt(9, comanda.getMesa());
 				stmt.setObject(10, ++seqPeso);
 				
-				if(CollectionsUtils.isNullOrEmpty(ingredientes))
+				if(ListUtils.isNullOrEmpty(ingredientes))
 				{
 					stmt.setInt(11, 0);
 				}
@@ -152,7 +156,7 @@ public class PedidosDao {
 				String variacoesFormatted = variacoes.isEmpty() ? "" : codigoSlashFormatter.format(variacoes);
 				stmt.setString(12, variacoesFormatted);
 				
-				if(!CollectionsUtils.isNullOrEmpty(adicionais.getSabores()))
+				if(!ListUtils.isNullOrEmpty(adicionais.getSabores()))
 				{
 					int idPizza =  Integer.parseInt(generator.gerarId(Generator.PIZZA));
 					itemPedido.setIdPizza(idPizza);
@@ -268,7 +272,7 @@ public class PedidosDao {
 	public List<ItemBBIFood> filtrarPedidosInseridos(PedidoBBIFood pedido) throws SQLException
 	{
 		List<ItemBBIFood> itens = pedido.getItens();
-		if(CollectionsUtils.isNullOrEmpty(itens)) 
+		if(ListUtils.isNullOrEmpty(itens)) 
 		{
 			return Collections.emptyList();
 		}
@@ -276,7 +280,7 @@ public class PedidosDao {
 		List<String> idsExistentes = comandaItemDao.getIdsExistentes(pedido);
 		
 		return itens.stream().filter(i-> 
-			 !CollectionsUtils.getEmptyIfNull(idsExistentes)
+			 !ListUtils.getEmptyIfNull(idsExistentes)
 			 .contains(i.getId())
 			)
 			.collect(Collectors.toList());

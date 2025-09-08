@@ -2,7 +2,7 @@ package web_cardapio.br.com.bitbyte.models;
 
 import java.util.List;
 
-import web_cardapio.br.com.bitbyte.utils.CollectionsUtils;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
 public class Pergunta {
@@ -27,7 +27,7 @@ public class Pergunta {
 		return this;
 	}
 	public List<Alternativa> getAlternativas() {
-		return CollectionsUtils.getEmptyIfNull(alternativas);
+		return ListUtils.getEmptyIfNull(alternativas);
 	}
 	public Pergunta setAlternativas(List<Alternativa> alternativas) {
 		this.alternativas = alternativas;
