@@ -59,9 +59,6 @@ public class Startup {
         JLabel label = new JLabel("Servidor Cardápio BBIFood executando...");
         frame.add(label);
         
-       
-        
-
         JButton closeButton = new JButton("Fechar");
         closeButton.addActionListener(e -> 
         {

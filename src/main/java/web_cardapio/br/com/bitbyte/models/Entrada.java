@@ -11,6 +11,7 @@ public class Entrada {
     private Integer mesa;
     private FormaAtendimento formaAtendimento;
     private List<Comanda> comandas;
+    private Dispositivo dispositivo;
 
 	public Integer getMesa() {
 		return mesa;
@@ -47,4 +48,15 @@ public class Entrada {
 		this.atendente = atendente;
 		return this;
 	}
+
+	public Dispositivo getDispositivo() {
+		return dispositivo;
+	}
+
+	public Entrada setDispositivo(Dispositivo dispositivo) {
+		this.dispositivo = dispositivo;
+		return this;
+	}
+	
+	
 }

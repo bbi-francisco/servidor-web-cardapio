@@ -20,6 +20,7 @@ public class Generator {
 	
 	public static final String FECHAMENTO = "GEN_TBCOMANDA_FECHAMENTO";
 	public static final String PIZZA = "GEN_ID_PIZZA";
+	public static final String LICENCA = "GEN_LICENCAS";
 	
 	public String gerarId(String generator) throws SQLException {
 		String id = "";
@@ -37,6 +38,12 @@ public class Generator {
 			throw new SQLException("Erro ao gerar id para o item. " +e);
 		}
 		return id;
+	}
+	
+	public int gerarIntId(String generator) throws SQLException 
+	{
+		String value = gerarId(generator);
+		return Integer.parseInt(value);
 	}
 	
 	public int gerarIdItem() throws SQLException

@@ -15,5 +15,6 @@ public class BBIStatus {
 	    public static final int COMANDA_JA_ABERTA = 478;
 	    public static final int QR_CODE_INVALIDO = 479;
 	    public static final int COMANDA_SEM_ITENS = 480;
+	    public static final int SEM_LICENCA = 481;
 	}
 }

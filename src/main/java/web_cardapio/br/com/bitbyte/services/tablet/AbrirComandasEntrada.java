@@ -15,6 +15,7 @@ import web_cardapio.br.com.bitbyte.command.ValidaComandaBloqueada;
 import web_cardapio.br.com.bitbyte.command.ValidaComandaFechada;
 import web_cardapio.br.com.bitbyte.command.ValidaComandaNaoAberta;
 import web_cardapio.br.com.bitbyte.command.ValidaIntervaloComanda;
+import web_cardapio.br.com.bitbyte.command.ValidaLicenca;
 import web_cardapio.br.com.bitbyte.command.ValidaLimiteComanda;
 import web_cardapio.br.com.bitbyte.dao.ComandaDao;
 import web_cardapio.br.com.bitbyte.enums.FormaAtendimento;
@@ -57,6 +58,9 @@ public class AbrirComandasEntrada {
 
 	@Autowired
 	private ValidaComandaNaoAberta validaComandaNaoAberta;
+	
+	@Autowired
+	private ValidaLicenca validaLicenca;
 
 	public EntradaResult abrir(Entrada entrada) throws SQLException, BBIException {
 		try {
@@ -65,6 +69,7 @@ public class AbrirComandasEntrada {
 
 			validaCaixaAberto.execute();
 			validaAtendenteEntrada.execute(entrada);
+			validaLicenca.execute(entrada.getDispositivo());
 
 			List<Comanda> comandasEmAberto = new ArrayList<>();
 			List<Comanda> comandasInvalidas = new ArrayList<>();
@@ -105,8 +110,12 @@ public class AbrirComandasEntrada {
 				comandasAbertas.addAll(comandas);
 			}
 
-			return new EntradaResult().setComandasEmAberto(comandasEmAberto).setComandasInvalidas(comandasInvalidas)
-					.setComandasAbertas(comandasAbertas).setOk(true).setMessage("OK");
+			return new EntradaResult()
+					.setComandasEmAberto(comandasEmAberto)
+					.setComandasInvalidas(comandasInvalidas)
+					.setComandasAbertas(comandasAbertas)
+					.setOk(true)
+					.setMessage("OK");
 
 		} catch (BBIException e) {
 			return new EntradaResult().setOk(false).setMessage(e.getMessage());
