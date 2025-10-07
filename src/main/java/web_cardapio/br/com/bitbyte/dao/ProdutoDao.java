@@ -67,7 +67,9 @@ public class ProdutoDao
 			" COALESCE(piz.descricao, '') as descricao_tamanho_pizza, " + 
 			" COALESCE(piz.tamanho, '') as tamanho_pizza, " + 
 			" COALESCE(piz.qtdmin, -1) as qtdmin_pizza, " + 
-			" COALESCE(piz.qtdmax, -1) as qtdmax_pizza " +
+			" COALESCE(piz.qtdmax, -1) as qtdmax_pizza, " +
+			" COALESCE(p.ingrediente_obrigatorio, 'N') as ingrediente_obrigatorio, " +
+			" COALESCE(p.perg_venda_sugestiva, 'N') as perg_venda_sugestiva " +
 			" FROM tbprod p " + 
 			" LEFT JOIN tbgrupo g ON g.codigo = p.grupo " +
 			" LEFT JOIN tbsubgru sg ON sg.codigo = sg.codigo "+
@@ -108,6 +110,10 @@ public class ProdutoDao
 				produto.setUtilizaCardapioDigital("S".equals(rs.getString("produto_utiliza_cardapio")));
 				produto.setLimiteVenda(rs.getInt("limitevenda"));
 				produto.setDisponivel("S".equals(rs.getString("disponivel")));
+				
+				produto.setIngredienteObrigatorio("S".equals(rs.getString("ingrediente_obrigatorio")));
+				produto.setPergVendaSugestiva("S".equals(rs.getString("perg_venda_sugestiva")));
+
 				
 				handlePizza(produto, rs);
 				handleImages(produto, rs);

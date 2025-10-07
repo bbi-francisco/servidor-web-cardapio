@@ -39,7 +39,8 @@ public class SubGrupoDao
 				" COALESCE(sg.tpexibicao, '') AS tpexibicao, " + 
 				" sg.grupo, " + 
 				" sg.img, " +
-				" sg.utiliza_cardapio_digital " +
+				" sg.utiliza_cardapio_digital, " +
+				" sg.pizza " +
 				" FROM tbsubgru sg " + 
 				" WHERE sg.grupo IS NOT NULL " + 
 				" ORDER BY sg.descricao ";
@@ -68,6 +69,7 @@ public class SubGrupoDao
 				
 				String utilizaCardapio = rs.getString("utiliza_cardapio_digital");
 				subgrupo.setUtilizaCardapioDigital("S".equals(utilizaCardapio));
+				subgrupo.setPizza("S".equals(rs.getString("pizza")));
 				subgrupos.add(subgrupo);
 			}
 			return subgrupos;

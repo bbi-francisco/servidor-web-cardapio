@@ -39,101 +39,115 @@ public class Produto implements Quantificavel, Identificavel<String>{
 	private TamanhoPizza tamanhoPizza;
 	private int codigoPizza;
 	private int indice;
+	private boolean ingredienteObrigatorio;
+	private boolean pergVendaSugestiva;
 
 	public boolean isAlcoolico() {
 		return alcoolico;
 	}
 
-	public void setAlcoolico(boolean alcoolico) {
+	public Produto setAlcoolico(boolean alcoolico) {
 		this.alcoolico = alcoolico;
+		return this;
 	}
 
 	public String getCodigo() {
 		return StringUtils.getEmptyIfNull(codigo);
 	}
 
-	public void setCodigo(String codigo) {
+	public Produto setCodigo(String codigo) {
 		this.codigo = codigo;
+		return this;
 	}
 
 	public String getDescricao() {
 		return StringUtils.getEmptyIfNull(descricao);
 	}
 
-	public void setDescricao(String descricao) {
+	public Produto setDescricao(String descricao) {
 		this.descricao = descricao;
+		return this;
 	}
 
 	public String getGrupo() {
 		return StringUtils.getEmptyIfNull(grupo);
 	}
 
-	public void setGrupo(String grupo) {
+	public Produto setGrupo(String grupo) {
 		this.grupo = grupo;
+		return this;
 	}
 
 	public String getCodigoSubgrupo() {
 		return StringUtils.getEmptyIfNull(codigoSubgrupo);
 	}
 
-	public void setCodigoSubgrupo(String codigoSubgrupo) {
+	public Produto setCodigoSubgrupo(String codigoSubgrupo) {
 		this.codigoSubgrupo = codigoSubgrupo;
+		return this;
 	}
 
 	public BigDecimal getVrUnit() {
 		return vrUnit != null ? vrUnit : BigDecimal.valueOf(0);
 	}
 
-	public void setVrUnit(BigDecimal valorUnitario) {
+	public Produto setVrUnit(BigDecimal valorUnitario) {
 		this.vrUnit = valorUnitario;
+		return this;
 	}
 
 	public String getDescricaoDetalhes() {
 		return StringUtils.getEmptyIfNull(descricaoDetalhes);
 	}
 
-	public void setDescricaoDetalhes(String descricaoDetalhes) {
+	public Produto setDescricaoDetalhes(String descricaoDetalhes) {
 		this.descricaoDetalhes = descricaoDetalhes;
+		return this;
 	}
 
 	public boolean isPermiteMesclar() {
 		return permiteMesclar;
 	}
 
-	public void setPermiteMesclar(boolean permiteMesclar) {
+	public Produto setPermiteMesclar(boolean permiteMesclar) {
 		this.permiteMesclar = permiteMesclar;
+		return this;
 	}
 
 	public List<Ingrediente> getIngredientes() {
 		return ListUtils.getEmptyIfNull(ingredientes);
 	}
 
-	public void setIngredientes(List<Ingrediente> ingredientes) {
+	public Produto setIngredientes(List<Ingrediente> ingredientes) {
 		this.ingredientes = ingredientes;
+		return this;
 	}
 
 	public List<ItemCombo> getItensCombo() {
 		return ListUtils.getEmptyIfNull(itensCombo);
 	}
 
-	public void setItensCombo(List<ItemCombo> itensCombo) {
+	public Produto setItensCombo(List<ItemCombo> itensCombo) {
 		this.itensCombo = itensCombo;
+		return this;
 	}
 
 	public List<Variacao> getVariacoes() {
 		return ListUtils.getEmptyIfNull(variacoes);
 	}
 
-	public void setVariacoes(List<Variacao> lstVariacoes) {
+	public Produto setVariacoes(List<Variacao> lstVariacoes) {
 		this.variacoes = lstVariacoes;
+		return this;
 	}
 
 	public boolean isMontagem() {
 		return montagem;
 	}
 
-	public void setMontagem(boolean montagem) {
+	public Produto setMontagem(boolean montagem) {
 		this.montagem = montagem;
+		return this;
 	}
 
 	public double getQtd() {
@@ -149,60 +163,68 @@ public class Produto implements Quantificavel, Identificavel<String>{
 		return ListUtils.getEmptyIfNull(promocoes);
 	}
 
-	public void setPromocoes(List<Promocao> promocoes) {
+	public Produto setPromocoes(List<Promocao> promocoes) {
 		this.promocoes = promocoes;
+		return this;
 	}
 
 	public List<Restricao> getRestricoes() {
 		return ListUtils.getEmptyIfNull(restricoes);
 	}
 
-	public void setRestricoes(List<Restricao> restricoes) {
+	public Produto setRestricoes(List<Restricao> restricoes) {
 		this.restricoes = restricoes;
+		return this;
 	}
 
 	public boolean utilizaCardapioDigital() {
 		return utilizaCardapioDigital;
 	}
 
-	public void setUtilizaCardapioDigital(boolean utilizaCardapioDigital) {
+	public Produto setUtilizaCardapioDigital(boolean utilizaCardapioDigital) {
 		this.utilizaCardapioDigital = utilizaCardapioDigital;
+		return this;
 	}
 
 	public int getLimiteVenda() {
 		return limiteVenda;
 	}
 
-	public void setLimiteVenda(int limiteVenda) {
+	public Produto setLimiteVenda(int limiteVenda) {
 		this.limiteVenda = limiteVenda;
+		return this;
 	}
 
 	public String getCodigoPesquisa() {
 		return StringUtils.getEmptyIfNull(codigoPesquisa);
 	}
 
-	public void setCodigoPesquisa(String codigoPesquisa) {
+	public Produto setCodigoPesquisa(String codigoPesquisa) {
 		this.codigoPesquisa = codigoPesquisa;
+		return this;
 	}
 
 	public int getTipoProduto() {
 		return tipoProduto;
 	}
 
-	public void setTipoProduto(int tipoProduto) {
+	public Produto setTipoProduto(int tipoProduto) {
 		this.tipoProduto = tipoProduto;
+		return this;
 	}
 
 	public boolean isDisponivel() {
 		return disponivel;
 	}
 
-	public void setDisponivel(boolean disponivel) {
+	public Produto setDisponivel(boolean disponivel) {
 		this.disponivel = disponivel;
+		return this;
 	}
 
-	public void setTamanhoPizza(TamanhoPizza tamanhoPizza) {
+	public Produto setTamanhoPizza(TamanhoPizza tamanhoPizza) {
 		this.tamanhoPizza = tamanhoPizza;
+		return this;
 	}
 
 	public TamanhoPizza getTamanhoPizza() {
@@ -213,31 +235,53 @@ public class Produto implements Quantificavel, Identificavel<String>{
 		return ListUtils.getEmptyIfNull(images);
 	}
 
-	public void setImages(List<String> images) {
+	public Produto setImages(List<String> images) {
 		this.images = images;
+		return this;
 	}
 
 	public int getCodigoPizza() {
 		return codigoPizza;
 	}
 
-	public void setCodigoPizza(int codigoPizza) {
+	public Produto setCodigoPizza(int codigoPizza) {
 		this.codigoPizza = codigoPizza;
+		return this;
 	}
 
 	public String getDescritivoCardapioDigital() {
 		return StringUtils.getEmptyIfNull(descritivoCardapioDigital);
 	}
 
-	public void setDescritivoCardapioDigital(String descritivoCardapioDigital) {
+	public Produto setDescritivoCardapioDigital(String descritivoCardapioDigital) {
 		this.descritivoCardapioDigital = descritivoCardapioDigital;
+		return this;
 	}
 
 	public int getIndice() {
 		return indice;
 	}
 
-	public void setIndice(int indice) {
+	public Produto setIndice(int indice) {
 		this.indice = indice;
+		return this;
+	}
+
+	public boolean isIngredienteObrigatorio() {
+		return ingredienteObrigatorio;
+	}
+
+	public Produto setIngredienteObrigatorio(boolean ingredienteObrigatorio) {
+		this.ingredienteObrigatorio = ingredienteObrigatorio;
+		return this;
+	}
+
+	public boolean isPergVendaSugestiva() {
+		return pergVendaSugestiva;
+	}
+
+	public Produto setPergVendaSugestiva(boolean pergVendaSugestiva) {
+		this.pergVendaSugestiva = pergVendaSugestiva;
+		return this;
 	}
 }

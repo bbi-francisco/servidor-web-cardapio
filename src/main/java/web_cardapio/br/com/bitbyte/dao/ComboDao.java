@@ -75,7 +75,7 @@ public class ComboDao
 				"    FROM tbprod WHERE montagem = 'N' " + 
 				"    ) pdgc ON gci.codigo_produto = pdgc.codigo " + 
 				" LEFT JOIN tbprod_variacao v ON pdgc.codigo = v.cod_prod " + 
-				" WHERE pd.montagem = 'S' " + 
+				" WHERE pd.montagem = 'S' OR pd.perg_venda_sugestiva = 'S' " + 
 				" ORDER BY ordem, descricao_produto";
 		
 		try(Connection conn = connectionFactory.getConnection();

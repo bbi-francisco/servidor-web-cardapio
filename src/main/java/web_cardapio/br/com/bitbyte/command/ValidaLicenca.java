@@ -1,7 +1,5 @@
 package web_cardapio.br.com.bitbyte.command;
 
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-
 import java.sql.SQLException;
 import java.util.Optional;
 
@@ -45,7 +43,7 @@ public class ValidaLicenca {
 		}
 		
 		Dispositivo disp = optDisp.get();
-		if(!disp.isLiberado()) 
+		if(!disp.isLiberado())
 		{
 			throw new DispositivoSemLicencaException(msg);
 		}

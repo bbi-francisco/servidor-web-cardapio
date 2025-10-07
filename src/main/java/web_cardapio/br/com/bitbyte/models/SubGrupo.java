@@ -13,6 +13,7 @@ public class SubGrupo
 	private String grupo;
 	private List<Restricao> restricoes;
 	private boolean utilizaCardapioDigital;
+	private boolean pizza;
 	
 	public String getGrupo()
 	{
@@ -67,12 +68,21 @@ public class SubGrupo
 	public void setUtilizaCardapioDigital(boolean utilizaCardapioDigital) {
 		this.utilizaCardapioDigital = utilizaCardapioDigital;
 	}
+	
+	public boolean isPizza() {
+		return pizza;
+	}
+	public void setPizza(boolean pizza) {
+		this.pizza = pizza;
+	}
+	
 	@Override
 	public String toString() {
 		return "SubGrupo [codigo=" + codigo + ", descricao=" + descricao + ", indice=" + indice + ", img=" + img
 				+ ", tipoExibicao=" + tipoExibicao + ", grupo=" + grupo + ", restricoes=" + restricoes
 				+ ", utilizaCardapioDigital=" + utilizaCardapioDigital + "]";
 	}
+	
 	
 	
 }

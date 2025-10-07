@@ -14,11 +14,11 @@
     },
     "opcionaisTheme": {
         "btnOpcionalSelecionadoTheme": {
-            "color": "#841D33",
+            "color": "#F4511E",
             "textColor": "#FFFFFF"
         },
         "btnOpcionalTheme": {
-            "color": "#841D33",
+            "color": "#b5b1b1",
             "textColor": "#FFFFFF"
         }
     },
