@@ -67,5 +67,11 @@
     "menuSubgrupoTheme": {
         "selectedColor": "#FFFFFF",
         "color": "#000002"
+    },
+    "menuGrupoTheme": {
+        "selectedColor": "#039c1a",
+        "color": "#000002",
+        "selectedTextColor": "#FFFFFF",
+        "textColor": "#FFFFFF"
     }
 }

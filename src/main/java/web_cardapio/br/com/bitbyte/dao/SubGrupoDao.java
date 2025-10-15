@@ -62,7 +62,7 @@ public class SubGrupoDao
 				subgrupo.setCodigo(codigoSubGrupo);
 				subgrupo.setDescricao(rs.getString("descricao"));
 				subgrupo.setIndice(rs.getInt("indice"));
-				subgrupo.setGrupo(rs.getString("grupo"));
+				subgrupo.setCodigoGrupo(rs.getString("grupo"));
 				subgrupo.setImg(rs.getString("img"));
 				subgrupo.setTipoExibicao(rs.getString("tpexibicao"));
 				subgrupo.setRestricoes(restricoes.get(codigoSubGrupo));

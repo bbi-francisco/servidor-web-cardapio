@@ -15,7 +15,7 @@ public class Produto implements Quantificavel, Identificavel<String>{
 	private String codigoPesquisa;
 	private String descricao;
 	private String descritivoCardapioDigital;
-	private String grupo;
+	private String codigoGrupo;
 	private String codigoSubgrupo;
 	private BigDecimal vrUnit;
 	private String descricaoDetalhes;
@@ -69,12 +69,12 @@ public class Produto implements Quantificavel, Identificavel<String>{
 		return this;
 	}
 
-	public String getGrupo() {
-		return StringUtils.getEmptyIfNull(grupo);
+	public String getCodigoGrupo() {
+		return StringUtils.getEmptyIfNull(codigoGrupo);
 	}
 
-	public Produto setGrupo(String grupo) {
-		this.grupo = grupo;
+	public Produto setCodigoGrupo(String codigoGrupo) {
+		this.codigoGrupo = codigoGrupo;
 		return this;
 	}
 

@@ -57,11 +57,12 @@ public class ParametroDao
 		{
 			while(rs.next()) 
 			{
-				Parametro parametro = new Parametro();
-				parametro.setValor(rs.getString("valor"));
+				Parametro param = new Parametro();
+				param.setValor(rs.getString("valor"));
 				String descricao = rs.getString("parametro");
-				parametro.setDescricao(descricao);
-				mapParametros.put(descricao, parametro);
+				param.setParametro(descricao);
+				
+				mapParametros.put(descricao, param);
 			}
 			return mapParametros;
 		}
@@ -125,5 +126,41 @@ public class ParametroDao
 	public String trocaVirgula(String valor) {
 		return valor.replace(",", ".");
 	}
+	
+	public void updateOrInsertParametro(Parametro p) throws SQLException
+    {
+        String sqlValor = 
+                " COALESCE (" +
+                " ( " +
+                "   SELECT valor " +
+                "   FROM tbparametro p " +
+                "   WHERE p.parametro = '" +p.getParametro() + "'" +
+                " ), '" + p.getDefaultValue() + "') ";
+        
+        String sql = 
+            " UPDATE OR INSERT INTO tbparametro ( " +
+            " parametro, " +
+            " tipo, " +
+            " tipo_sn, " +
+            " grupo, " +
+            " descricao, " +
+            " palavra_chave, " +
+            " valor " +
+            " ) VALUES (?,?,?,?,?,?, " + sqlValor + ") " +
+            " MATCHING (parametro)";
+        
+        try(Connection conn = connectionFactory.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql))
+        {
+ 
+            stmt.setString(1, p.getParametro());
+            stmt.setString(2, p.getTipo());
+            stmt.setString(3, p.getTipoSn());
+            stmt.setString(4, p.getGrupo());
+            stmt.setString(5, p.getDescricao());
+            stmt.setString(6, p.getPalavraChave());
+            stmt.execute();
+        }
+    }
 	
 }

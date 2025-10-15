@@ -169,4 +169,5 @@ Resposta HTTP:
  web_cardapio.br.com.bitbyte.connection.ConnectionFactory 2025-10-07 15:20:25,734 -- ERROR -- java.lang.NullPointerException: Cannot invoke "web_cardapio.br.com.bitbyte.configuration.PropertiesConfig.getDatabaseWay()" because "this.propertiesConfig" is null 
  web_cardapio.br.com.bitbyte.connection.ConnectionFactory 2025-10-07 15:21:24,285 -- ERROR -- java.lang.NullPointerException: Cannot invoke "web_cardapio.br.com.bitbyte.configuration.PropertiesConfig.getDatabaseWay()" because "this.propertiesConfig" is null 
  web_cardapio.br.com.bitbyte.connection.ConnectionFactory 2025-10-07 15:30:32,809 -- ERROR -- java.lang.NullPointerException: Cannot invoke "web_cardapio.br.com.bitbyte.configuration.PropertiesConfig.getDatabaseWay()" because "this.propertiesConfig" is null 
+ web_cardapio.br.com.bitbyte.controllers.SubGruposController 2025-10-10 09:38:04,263 -- ERROR -- Não foi possível obter os subgrupos. Dynamic SQL Error; SQL error code = -206; Column unknown; SG.PIZZA; At line 1, column 227 [SQLState:42S22, ISC error code:335544578] 
  

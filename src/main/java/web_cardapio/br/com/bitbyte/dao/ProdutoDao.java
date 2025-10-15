@@ -95,7 +95,7 @@ public class ProdutoDao
 				produto.setCodigoPesquisa(rs.getString("codpesquisa"));
 				produto.setDescricao(rs.getString("descricao"));
 				produto.setDescritivoCardapioDigital(rs.getString("descritivo_cardapio_digital"));
-				produto.setGrupo(rs.getString("grupo"));
+				produto.setCodigoGrupo(rs.getString("grupo"));
 				produto.setCodigoSubgrupo(rs.getString("subgrupo"));
 				
 				produto.setVrUnit(BigDecimal.valueOf(rs.getDouble("valor")));

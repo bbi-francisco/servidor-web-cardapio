@@ -26,6 +26,7 @@ public class Parametros {
 	public static final String DIRETORIO_INSTALACOES = "DIRETORIO_INSTALACOES";
 	public static final String UTILIZA_PESQUISA_SATISFACAO = "UTILIZA_PESQUISA_SATISFACAO";
 	public static final String BLOQ_COMANDA_APOS_FX = "BLOQ_COMANDA_APOS_FX";
+	public static final String CARDAPIO_DIGITAL_UTILIZA_GRUPO = "CARDAPIO_DIGITAL_UTILIZA_GRUPO";
 	
 	public String getParametros()
 	{

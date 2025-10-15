@@ -10,18 +10,18 @@ public class SubGrupo
 	private int indice;
 	private String img;
 	private String tipoExibicao;
-	private String grupo;
+	private String codigoGrupo;
 	private List<Restricao> restricoes;
 	private boolean utilizaCardapioDigital;
 	private boolean pizza;
 	
-	public String getGrupo()
+	public String getCodigoGrupo()
 	{
-		return grupo != null ? grupo : "";
+		return codigoGrupo != null ? codigoGrupo : "";
 	}
-	public void setGrupo(String grupo)
+	public void setCodigoGrupo(String codigoGrupo)
 	{
-		this.grupo = grupo;
+		this.codigoGrupo = codigoGrupo;
 	}
 	public String getCodigo() {
 		return codigo != null ? codigo : "";
@@ -79,7 +79,7 @@ public class SubGrupo
 	@Override
 	public String toString() {
 		return "SubGrupo [codigo=" + codigo + ", descricao=" + descricao + ", indice=" + indice + ", img=" + img
-				+ ", tipoExibicao=" + tipoExibicao + ", grupo=" + grupo + ", restricoes=" + restricoes
+				+ ", tipoExibicao=" + tipoExibicao + ", grupo=" + codigoGrupo + ", restricoes=" + restricoes
 				+ ", utilizaCardapioDigital=" + utilizaCardapioDigital + "]";
 	}
 	
