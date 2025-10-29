@@ -15,6 +15,7 @@ import web_cardapio.br.com.bitbyte.command.ValidaComandaBloqueada;
 import web_cardapio.br.com.bitbyte.command.ValidaComandaFechada;
 import web_cardapio.br.com.bitbyte.command.ValidaComandaNaoAberta;
 import web_cardapio.br.com.bitbyte.command.ValidaIntervaloComanda;
+import web_cardapio.br.com.bitbyte.command.ValidaLicenca;
 import web_cardapio.br.com.bitbyte.command.ValidaLimiteComanda;
 import web_cardapio.br.com.bitbyte.dao.ComandaDao;
 import web_cardapio.br.com.bitbyte.enums.BBIStatus;
@@ -59,6 +60,9 @@ class AberturaComandaEntradaTest {
 
 	@Mock
 	ValidaComandaNaoAberta validaComandaNaoAberta;
+	
+	@Mock
+	ValidaLicenca validaLicenca;
 	
 	@Mock
 	BbiParamService bbiParamService;

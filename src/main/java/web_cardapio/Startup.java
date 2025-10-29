@@ -36,7 +36,7 @@ import web_cardapio.br.com.bitbyte.scripts.ScriptsService;
 @SpringBootApplication
 public class Startup {
 	
-	private static final String VERSION = "1.0.9";
+	private static final String VERSION = "1.1.0";
 	
 	static JFrame frame = new JFrame("Web Cardapio - " + VERSION);
 	

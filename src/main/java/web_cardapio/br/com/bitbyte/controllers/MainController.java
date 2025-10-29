@@ -25,5 +25,5 @@ public class MainController {
 	public void scripts() throws SQLException {
 		scripts.execute();
 	}
-
+	
 }
