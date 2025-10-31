@@ -29,7 +29,8 @@ public class GrupoDao {
 			" g.codigo, " +
 			" g.descricao, " +
 			" g.img, " +
-			" g.utiliza_cardapio_digital " +
+			" g.utiliza_cardapio_digital, " +
+			" g.indice " +
 			" FROM tbgrupo g " +
 			" ORDER BY descricao "; 
 		
@@ -40,12 +41,11 @@ public class GrupoDao {
 			ResultSet rs = pst.executeQuery())
 		{
 			while(rs.next()) {
-				Grupo grupo = new Grupo();
-				
-				String codigoGrupo = rs.getString("codigo");
-				grupo.setCodigo(codigoGrupo);
-				grupo.setDescricao(rs.getString("descricao"));
-				grupo.setImg(rs.getString("img"));
+				Grupo grupo = new Grupo()
+				.setCodigo(rs.getString("codigo"))
+				.setDescricao(rs.getString("descricao"))
+				.setImg(rs.getString("img"))
+				.setIndice(rs.getInt("indice"));
 				
 				String utilizaCardapioDigital =  rs.getString("utiliza_cardapio_digital");
 				grupo.setUtilizaCardapioDigital("S".equals(utilizaCardapioDigital));

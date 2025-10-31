@@ -3570,4 +3570,132 @@ Resposta HTTP:
  web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 14:21:41,360 -- INFO -- Chegou aqui 6  
  web_cardapio.br.com.bitbyte.dao.PedidosDao 2025-10-29 14:26:59,525 -- INFO -- Pedido inserido: {"pedidoComanda":{"valorTotal":84.800,"itens":[{"descricao":"BANANA NEVADA  BROTO DOCE / CAPPUCCINO  BROTO DOCE","codigo":"000355","vrUnit":38.90,"qtd":1.0,"codigoPesquisa":"999999","origem":"CDP_TABLET","adicionais":{"listAcrescentar":[{"codigo":"00118","descricao":"MASSA INTEGRAL","codigoPai":"","vrUnit":5.0,"tipo":"A","qtd":1},{"codigo":"00097","descricao":"BORDA BROTO DOCE DE LEITE","codigoPai":"","vrUnit":11.9,"tipo":"A","qtd":1}],"listRetirar":[],"itensMontagem":[],"variacoes":[],"sabores":[{"descricao":"BANANA NEVADA  BROTO DOCE","codigo":"000355","vrUnit":38.9,"qtd":1.0,"codigoPesquisa":"355","adicionais":{"listAcrescentar":[{"codigo":"00066","descricao":"COCO RALADO","codigoPai":"","vrUnit":5.0,"tipo":"A","qtd":1},{"codigo":"00068","descricao":"DOCE DE LEITE","codigoPai":"","vrUnit":8.0,"tipo":"A","qtd":1},{"codigo":"00065","descricao":"M\u0026M S","codigoPai":"","vrUnit":8.0,"tipo":"A","qtd":1}],"listRetirar":[{"codigo":"00100","descricao":"SEM CANELA","codigoPai":"","vrUnit":0.0,"tipo":"D","qtd":0}],"itensMontagem":[],"variacoes":[],"sabores":[]},"acessorio":false},{"descricao":"CAPPUCCINO  BROTO DOCE","codigo":"000358","vrUnit":38.9,"qtd":1.0,"codigoPesquisa":"358","adicionais":{"listAcrescentar":[{"codigo":"00065","descricao":"M\u0026M S","codigoPai":"","vrUnit":8.0,"tipo":"A","qtd":1}],"listRetirar":[],"itensMontagem":[],"variacoes":[],"sabores":[]},"acessorio":false}]},"acessorio":false}],"comanda":{"numero":1,"maioridade":false,"atendente":{"codigo":"","senha":"1","usuario":"BBI"},"idTablet":1,"mesa":1,"tag":"","quantidadePessoas":0,"formaAtendimento":"MESA","idTag":""}}} 
  web_cardapio.br.com.bitbyte.dao.ParametroDao 2025-10-29 14:28:03,022 -- INFO -- TAXA DE ATENDIMENTO: R$ 8,48 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-29 14:50:19,526 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 14:50:32,195 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-29 15:07:44,267 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 15:08:03,172 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 15:30:45,316 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-29 16:21:44,364 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 16:21:56,561 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 16:23:52,868 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-29 16:24:45,440 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 16:24:57,084 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 16:25:33,276 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.PedidosDao 2025-10-29 16:26:54,342 -- INFO -- Pedido inserido: {"pedidoComanda":{"valorTotal":125.900,"itens":[{"descricao":"BRIGADEIRO  GRANDE DOCE / BRIGADEIRO  GRANDE DOCE","codigo":"000365","vrUnit":59.90,"qtd":1.0,"codigoPesquisa":"999999","origem":"CDP_TABLET","adicionais":{"listAcrescentar":[{"codigo":"00118","descricao":"MASSA INTEGRAL","codigoPai":"","vrUnit":5.0,"tipo":"A","qtd":1},{"codigo":"00101","descricao":"BORDA DOCE DE LETE","codigoPai":"","vrUnit":19.0,"tipo":"A","qtd":1}],"listRetirar":[],"itensMontagem":[],"variacoes":[],"sabores":[{"descricao":"BRIGADEIRO  GRANDE DOCE","codigo":"000365","vrUnit":59.9,"qtd":1.0,"codigoPesquisa":"365","adicionais":{"listAcrescentar":[{"codigo":"00066","descricao":"COCO RALADO","codigoPai":"","vrUnit":5.0,"tipo":"A","qtd":1},{"codigo":"00068","descricao":"DOCE DE LEITE","codigoPai":"","vrUnit":8.0,"tipo":"A","qtd":1},{"codigo":"00065","descricao":"M\u0026M S","codigoPai":"","vrUnit":8.0,"tipo":"A","qtd":1}],"listRetirar":[],"itensMontagem":[],"variacoes":[],"sabores":[]},"acessorio":false},{"descricao":"BRIGADEIRO  GRANDE DOCE","codigo":"000365","vrUnit":59.9,"qtd":1.0,"codigoPesquisa":"365","adicionais":{"listAcrescentar":[{"codigo":"00066","descricao":"COCO RALADO","codigoPai":"","vrUnit":5.0,"tipo":"A","qtd":1},{"codigo":"00068","descricao":"DOCE DE LEITE","codigoPai":"","vrUnit":8.0,"tipo":"A","qtd":1},{"codigo":"00065","descricao":"M\u0026M S","codigoPai":"","vrUnit":8.0,"tipo":"A","qtd":1}],"listRetirar":[],"itensMontagem":[],"variacoes":[],"sabores":[]},"acessorio":false}]},"acessorio":false}],"comanda":{"numero":1,"maioridade":false,"atendente":{"codigo":"","senha":"1","usuario":"BBI"},"idTablet":1,"mesa":1,"tag":"","quantidadePessoas":0,"formaAtendimento":"MESA","idTag":""}}} 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 16:33:25,156 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 16:33:32,289 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 17:08:16,694 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-29 17:13:55,218 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 08:45:53,708 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 08:46:12,635 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.PedidosDao 2025-10-30 08:50:20,312 -- INFO -- Pedido inserido: {"pedidoComanda":{"valorTotal":192.400,"itens":[{"descricao":"ABOBRINHA  GRANDE / ALICHE  GRANDE","codigo":"000401","vrUnit":107.40,"qtd":1.0,"codigoPesquisa":"999999","origem":"CDP_TABLET","adicionais":{"listAcrescentar":[{"codigo":"00118","descricao":"MASSA INTEGRAL","codigoPai":"","vrUnit":5.0,"tipo":"A","qtd":1},{"codigo":"00051","descricao":"BORDA CREAM CHEESE","codigoPai":"","vrUnit":18.0,"tipo":"A","qtd":1}],"listRetirar":[],"itensMontagem":[],"variacoes":[],"sabores":[{"descricao":"ABOBRINHA  GRANDE","codigo":"000401","vrUnit":84.9,"qtd":1.0,"codigoPesquisa":"401","adicionais":{"listAcrescentar":[{"codigo":"00061","descricao":"ADC CATUPIRY","codigoPai":"","vrUnit":13.0,"tipo":"A","qtd":1},{"codigo":"00064","descricao":"ADC CHEDDAR","codigoPai":"","vrUnit":13.0,"tipo":"A","qtd":1},{"codigo":"00071","descricao":"ADC OVO PIZZA","codigoPai":"","vrUnit":5.0,"tipo":"A","qtd":1}],"listRetirar":[],"itensMontagem":[],"variacoes":[],"sabores":[]},"acessorio":false},{"descricao":"ALICHE  GRANDE","codigo":"000389","vrUnit":129.9,"qtd":1.0,"codigoPesquisa":"389","adicionais":{"listAcrescentar":[{"codigo":"00061","descricao":"ADC CATUPIRY","codigoPai":"","vrUnit":13.0,"tipo":"A","qtd":1},{"codigo":"00064","descricao":"ADC CHEDDAR","codigoPai":"","vrUnit":13.0,"tipo":"A","qtd":1},{"codigo":"00071","descricao":"ADC OVO PIZZA","codigoPai":"","vrUnit":5.0,"tipo":"A","qtd":1}],"listRetirar":[],"itensMontagem":[],"variacoes":[],"sabores":[]},"acessorio":false}]},"acessorio":false}],"comanda":{"numero":1,"maioridade":false,"atendente":{"codigo":"","senha":"1","usuario":"BBI"},"idTablet":1,"mesa":1,"tag":"","quantidadePessoas":0,"formaAtendimento":"MESA","idTag":""}}} 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:10:48,815 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:15:38,851 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:17:47,781 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:19:39,921 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:23:49,374 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:27:46,221 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:29:01,162 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:30:04,735 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:33:31,153 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:46:10,019 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:47:28,583 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 09:49:52,085 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 10:10:49,282 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 10:20:53,724 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.repositories.VersaoRepository 2025-10-30 10:24:36,334 -- INFO -- Diretorio instalacao = C:\projetos-desenvolvimento\web_cardapio\CARDAPIO_TABLET.apk 
+ web_cardapio.br.com.bitbyte.controllers.VersaoController 2025-10-30 10:24:36,335 -- INFO -- Arquivo de instalação: C:\projetos-desenvolvimento\web_cardapio\CARDAPIO_TABLET.apk não existente.  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 10:24:47,480 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 10:40:57,015 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 10:41:59,444 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 10:44:48,255 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 10:50:42,243 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 10:54:10,187 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 10:55:18,989 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 10:58:37,105 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:01:12,433 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:02:36,341 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:05:04,657 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:06:26,177 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:12:33,442 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:12:35,810 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:13:08,681 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:13:11,093 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:13:13,388 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:13:25,388 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:13:39,468 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:13:42,831 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:13:50,275 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:14:03,124 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:14:08,616 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:14:39,777 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:14:57,995 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:15:02,205 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:18:28,440 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:20:39,558 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:22:10,425 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 11:25:28,369 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:47:57,945 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:48:36,923 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:50:16,034 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:56:29,313 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 11:59:14,314 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 12:00:16,027 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 12:01:23,791 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 12:11:29,544 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 12:21:20,563 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 12:24:56,296 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 12:26:37,010 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 12:34:29,335 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 13:55:29,453 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 13:56:39,455 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:02:09,648 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:10:29,325 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:15:01,865 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:17:59,877 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:19:39,572 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:27:48,553 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:36:53,007 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:38:45,787 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:49:36,341 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:53:02,139 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 14:56:08,154 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:07:01,391 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:07:49,543 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:09:02,019 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:10:34,795 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:12:19,187 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:14:20,910 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:15:56,852 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:17:22,276 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:19:27,552 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.PedidosDao 2025-10-30 15:22:36,381 -- INFO -- Pedido inserido: {"pedidoComanda":{"valorTotal":19.90,"itens":[{"descricao":"MOLHO PIMENTA KIOSQUE ROSEIRA","codigo":"000652","vrUnit":19.9,"qtd":1.0,"codigoPesquisa":"2000","origem":"CDP_TABLET","adicionais":{"listAcrescentar":[],"listRetirar":[],"itensMontagem":[],"variacoes":[],"sabores":[]},"acessorio":false}],"comanda":{"numero":1,"maioridade":false,"atendente":{"codigo":"","senha":"1","usuario":"BBI"},"idTablet":1,"mesa":1,"tag":"","quantidadePessoas":0,"formaAtendimento":"MESA","idTag":""}}} 
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 15:27:55,040 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 15:28:12,667 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-30 16:46:26,977 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 16:46:44,379 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 16:49:28,480 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 16:50:34,923 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 16:52:41,460 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.repositories.VersaoRepository 2025-10-30 16:54:39,529 -- INFO -- Diretorio instalacao = C:\projetos-desenvolvimento\web_cardapio\CARDAPIO_TABLET.apk 
+ web_cardapio.br.com.bitbyte.controllers.VersaoController 2025-10-30 16:54:39,529 -- INFO -- Arquivo de instalação: C:\projetos-desenvolvimento\web_cardapio\CARDAPIO_TABLET.apk não existente.  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 16:54:51,634 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:04:52,949 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:07:54,702 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:12:24,312 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:13:49,288 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:17:43,732 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:22:33,287 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:26:29,567 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:28:06,070 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:28:57,674 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:33:43,464 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-30 17:34:52,806 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-31 08:29:54,222 -- INFO -- Executando scripts... 
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-31 08:30:34,533 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-31 08:32:01,962 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.repositories.VersaoRepository 2025-10-31 08:34:12,068 -- INFO -- Diretorio instalacao = C:\projetos-desenvolvimento\web_cardapio\CARDAPIO_TABLET.apk 
+ web_cardapio.br.com.bitbyte.controllers.VersaoController 2025-10-31 08:34:12,069 -- INFO -- Arquivo de instalação: C:\projetos-desenvolvimento\web_cardapio\CARDAPIO_TABLET.apk não existente.  
+ web_cardapio.br.com.bitbyte.dao.ThemeDao 2025-10-31 08:34:25,181 -- INFO -- Chegou aqui 6  
+ web_cardapio.br.com.bitbyte.scripts.ScriptsService 2025-10-31 08:49:08,195 -- INFO -- Executando scripts... 
  

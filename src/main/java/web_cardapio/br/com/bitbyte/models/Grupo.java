@@ -1,34 +1,50 @@
 package web_cardapio.br.com.bitbyte.models;
 
+import web_cardapio.br.com.bitbyte.utils.StringUtils;
+
 public class Grupo {
 	private String codigo;
 	private String descricao;
 	private String img;
 	private boolean utilizaCardapioDigital;
+	private int indice;
 	
 	public String getCodigo() {
-		return codigo;
+		return StringUtils.getEmptyIfNull(codigo);
 	}
-	public void setCodigo(String codigo) {
+	public Grupo setCodigo(String codigo) {
 		this.codigo = codigo;
+		return this;
 	}
 	public String getDescricao() {
-		return descricao;
+		return StringUtils.getEmptyIfNull(descricao);
 	}
-	public void setDescricao(String descricao) {
+	public Grupo setDescricao(String descricao) {
 		this.descricao = descricao;
+		return this;
 	}
 	public String getImg() {
-		return img;
+		return StringUtils.getEmptyIfNull(img);
 	}
-	public void setImg(String img) {
+	public Grupo setImg(String img) {
 		this.img = img;
+		return this;
 	}
 	
 	public boolean utilizaCardapioDigital() {
 		return utilizaCardapioDigital;
 	}
-	public void setUtilizaCardapioDigital(boolean utilizaCardapioDigital) {
+	public Grupo setUtilizaCardapioDigital(boolean utilizaCardapioDigital) {
 		this.utilizaCardapioDigital = utilizaCardapioDigital;
+		return this;
 	}
+	public int getIndice() {
+		return indice;
+	}
+	public Grupo setIndice(int indice) {
+		this.indice = indice;
+		return this;
+	}
+	
+	
 }
