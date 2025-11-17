@@ -28,7 +28,7 @@ public class VersaoRepository {
 	private ParametrosService parametrosService;
 	
 	private static final Logger log = Logger.getLogger(VersaoRepository.class);
-
+	
 	public AppVersion getVersao(String applicationName, String versaoAparelho) throws SQLException, IOException {
 		AppVersion version = versaoDao.getAppVersion(applicationName);
 		if (version == null || StringUtils.isNullOrEmpty(version.getVersion())) {
@@ -58,6 +58,21 @@ public class VersaoRepository {
 				.setInstallerBase64(base64);
 
 		return installer;
+	}
+	
+	public File getInstallerFile(String applicationName) throws IOException {
+		String diretorioInstalacao = System.getProperty("user.dir");
+		String path = diretorioInstalacao + "\\" + applicationName + ".apk";
+		
+//		String path = "C:\\bbifood\\web_cardapio\\" +applicationName + ".apk";
+		
+		log.info("Diretorio instalacao = " +path);
+		File file = new File(path);
+		if (!file.exists()) {
+			throw new RuntimeException("Arquivo de instalação: " + path + " não existente. ");
+		}
+		
+		return file;
 	}
 
 }

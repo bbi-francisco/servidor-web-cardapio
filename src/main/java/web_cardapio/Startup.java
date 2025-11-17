@@ -2,6 +2,7 @@ package web_cardapio;
 
 import java.awt.FlowLayout;
 import java.awt.Image;
+import java.awt.TrayIcon.MessageType;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,12 +12,15 @@ import java.sql.SQLException;
 
 import javax.annotation.PostConstruct;
 import javax.imageio.ImageIO;
+import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import javax.swing.event.AncestorEvent;
@@ -24,21 +28,26 @@ import javax.swing.event.AncestorListener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.ApplicationContext;
 import org.springframework.util.ResourceUtils;
 
+import web_cardapio.br.com.bitbyte.dao.VersaoDao;
+import web_cardapio.br.com.bitbyte.models.AppVersion;
 import web_cardapio.br.com.bitbyte.scripts.ScriptsService;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class Startup {
 	
-	private static final String VERSION = "1.1.1";
+	private static final String VERSION = "1.1.2";
 	
-	static JFrame frame = new JFrame("Web Cardapio - " + VERSION);
+	private static JFrame frame = new JFrame("Web Cardapio - " + VERSION);
 	
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(Startup.class, args);
@@ -51,7 +60,9 @@ public class Startup {
 		frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 150);
+        
         frame.setLayout(new FlowLayout());
+        
         frame.setResizable(false);
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         
@@ -64,11 +75,14 @@ public class Startup {
         JLabel label = new JLabel("Servidor Cardápio BBIFood executando...");
         frame.add(label);
         
+        
         JButton closeButton = new JButton("Fechar");
         closeButton.addActionListener(e -> 
         {
         	closeEvent();
         });
+        
+        
         frame.add(closeButton);
         frame.setVisible(true);
         return frame;

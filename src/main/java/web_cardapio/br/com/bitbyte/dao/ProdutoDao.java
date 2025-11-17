@@ -13,15 +13,21 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
 
 import web_cardapio.br.com.bitbyte.connection.ConnectionFactory;
 import web_cardapio.br.com.bitbyte.enums.RestricaoType;
+import web_cardapio.br.com.bitbyte.format.Format;
+import web_cardapio.br.com.bitbyte.models.Alergias;
+import web_cardapio.br.com.bitbyte.models.ProdInfo;
 import web_cardapio.br.com.bitbyte.models.Produto;
 import web_cardapio.br.com.bitbyte.models.Promocao;
 import web_cardapio.br.com.bitbyte.models.Restricao;
 import web_cardapio.br.com.bitbyte.models.TamanhoPizza;
 import web_cardapio.br.com.bitbyte.utils.ListUtils;
+import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
 @Repository
 public class ProdutoDao
@@ -74,6 +80,7 @@ public class ProdutoDao
 			" LEFT JOIN tbgrupo g ON g.codigo = p.grupo " +
 			" LEFT JOIN tbsubgru sg ON sg.codigo = sg.codigo "+
 			" LEFT JOIN tbtamanho_pizza piz ON piz.codigo = p.codtam_pizza " +
+			" LEFT JOIN tbalergias al ON al.cod_prod = p.codigo " +
 			where + 
 			" ORDER BY trim (p.subgrupo), trim(p.descricao) ";
 		
@@ -113,7 +120,6 @@ public class ProdutoDao
 				
 				produto.setIngredienteObrigatorio("S".equals(rs.getString("ingrediente_obrigatorio")));
 				produto.setPergVendaSugestiva("S".equals(rs.getString("perg_venda_sugestiva")));
-
 				
 				handlePizza(produto, rs);
 				handleImages(produto, rs);
@@ -190,5 +196,47 @@ public class ProdutoDao
 			}
 			return map;
 		}
+	}
+	
+	public ProdInfo getProdInfo(String codigo) throws SQLException {
+		List<ProdInfo> prodInfos = getProdInfos(codigo);
+		if(ListUtils.isNullOrEmpty(prodInfos)) {
+			return new ProdInfo()
+					.setCodigo(codigo)
+					.setDisponivel(false)
+					.setUtilizaCardapioDigital(false);
+		}
+		
+		return prodInfos.getFirst();
+	}
+
+	public List<ProdInfo> getProdInfos(String codigo) throws SQLException {
+		String sql = 
+				" SELECT " +
+				" codigo, " +
+				" disponivel, " +
+				" utiliza_cardapio_digital " +
+				" FROM tbprod pd ";
+		
+		if(!StringUtils.isNullOrEmpty(codigo)) {
+			sql += " WHERE pd.codigo = " + Format.casasFormat(codigo, 6);
+		}
+		
+		try(Connection conn = connectionFactory.getConnection();
+				PreparedStatement pst = conn.prepareStatement(sql);
+				ResultSet rs = pst.executeQuery())
+			{
+				List<ProdInfo> prodInfos = new ArrayList<>();
+				while(rs.next()) 
+				{
+					ProdInfo p = new ProdInfo()
+							.setCodigo(rs.getString("codigo"))
+							.setDisponivel("S".equals(rs.getString("disponivel")))
+							.setUtilizaCardapioDigital("S".equals(rs.getString("utiliza_cardapio_digital")));
+					
+					prodInfos.add(p);
+				}
+				return prodInfos;
+			}
 	}
 }

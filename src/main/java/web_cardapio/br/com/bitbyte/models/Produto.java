@@ -41,7 +41,7 @@ public class Produto implements Quantificavel, Identificavel<String>{
 	private int indice;
 	private boolean ingredienteObrigatorio;
 	private boolean pergVendaSugestiva;
-
+	
 	public boolean isAlcoolico() {
 		return alcoolico;
 	}
@@ -284,4 +284,6 @@ public class Produto implements Quantificavel, Identificavel<String>{
 		this.pergVendaSugestiva = pergVendaSugestiva;
 		return this;
 	}
+	
+	
 }
