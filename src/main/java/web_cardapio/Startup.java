@@ -45,7 +45,7 @@ import web_cardapio.br.com.bitbyte.scripts.ScriptsService;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class Startup {
 	
-	private static final String VERSION = "1.1.2";
+	private static final String VERSION = "1.1.5";
 	
 	private static JFrame frame = new JFrame("Web Cardapio - " + VERSION);
 	
@@ -74,7 +74,6 @@ public class Startup {
         
         JLabel label = new JLabel("Servidor Cardápio BBIFood executando...");
         frame.add(label);
-        
         
         JButton closeButton = new JButton("Fechar");
         closeButton.addActionListener(e -> 

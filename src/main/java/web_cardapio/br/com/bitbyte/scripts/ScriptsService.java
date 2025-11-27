@@ -43,6 +43,7 @@ public class ScriptsService {
 		values.add(createGeneratorLicencas());
 		values.add(addPizzaFieldSubgrupo());
 		values.add(addProdPergVendaSugestiva());
+		values.add(createScriptsAlergia());
 		
 		return values;
 	}
@@ -131,6 +132,33 @@ public class ScriptsService {
 		return new GeneratorScript()
 				.setGeneratorName("gen_licencas")
 				.setSql(sql)
+				.create();
+	}
+	
+	private String createScriptsAlergia() {
+		String sql = 
+				" CREATE TABLE tbalergias " +
+				" ( " +
+				"    cod_prod VARCHAR(6), " +
+				"    ovo CHAR(1) DEFAULT ''N'', " +
+				"    leite CHAR(1) DEFAULT ''N'', " +
+				"    soja CHAR(1) DEFAULT ''N'', " +
+				"    gluten CHAR(1) DEFAULT ''N'', " +
+				"    amendoim CHAR(1) DEFAULT ''N'', " +
+				"    sulfitos CHAR(1) DEFAULT ''N'', " +
+				"    peixe CHAR(1) DEFAULT ''N'', " +
+				"    moluscos CHAR(1) DEFAULT ''N'', " +
+				"    mostarda CHAR(1) DEFAULT ''N'', " +
+				"    nozes CHAR(1) DEFAULT ''N'', " +
+				"    gergelim CHAR(1) DEFAULT ''N'', " +
+				"    aipo CHAR(1) DEFAULT ''N'', " +
+				"    tremoco CHAR(1) DEFAULT ''N'', " +
+				"    crustaceos CHAR(1) DEFAULT ''N'' " +
+				" ) ";
+				
+		return new TableScript()
+				.setSql(sql)
+				.setTableName("tbalergias")
 				.create();
 	}
 }

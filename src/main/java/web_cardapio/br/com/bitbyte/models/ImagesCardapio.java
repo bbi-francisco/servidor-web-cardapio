@@ -11,6 +11,7 @@ public class ImagesCardapio {
 	
 	private String cardapioPlaceholder;
 	private List<String> imagesEstabelecimento;
+	private List<String> imagesBanners;
 	
 	
 	public String getCardapioPlaceholder() {
@@ -28,6 +29,15 @@ public class ImagesCardapio {
 	
 	public ImagesCardapio setImagesEstabelecimento(List<String> imagesEstabelecimento) {
 		this.imagesEstabelecimento = imagesEstabelecimento;
+		return this;
+	}
+
+	public List<String> getImagesBanners() {
+		return ListUtils.getEmptyIfNull(imagesBanners);
+	}
+
+	public ImagesCardapio setImagesBanners(List<String> imagesBanners) {
+		this.imagesBanners = imagesBanners;
 		return this;
 	}
 }

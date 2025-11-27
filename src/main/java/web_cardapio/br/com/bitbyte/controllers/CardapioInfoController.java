@@ -1,5 +1,6 @@
 package web_cardapio.br.com.bitbyte.controllers;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,8 @@ public class CardapioInfoController {
 	@Autowired
 	private CardapioInfoService cardapioService;
 	
+	private static final Logger log = Logger.getLogger(CardapioInfoController.class);
+	
 	@GetMapping("{codProd}")
 	public Retorno<ProdInfo> getProdInfo(@PathVariable("codProd") String codigo)
 	{
@@ -30,8 +33,12 @@ public class CardapioInfoController {
 					.setStatus(HttpStatus.OK.value());
 			
 		}catch(Exception e) {
+			
+			log.info("ERRO:" +e.toString());
+			
 			return new Retorno<ProdInfo>()
-					.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
+					.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value())
+					.setMsg(e.toString());
 		}
 		
 	}
@@ -47,6 +54,9 @@ public class CardapioInfoController {
 					.setStatus(HttpStatus.OK.value());
 			
 		}catch(Exception e) {
+			
+			log.info("ERRO:" + e.toString());
+			
 			return new Retorno<CardapioInfo>()
 					.setStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());
 		}

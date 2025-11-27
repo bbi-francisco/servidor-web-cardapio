@@ -198,8 +198,10 @@ public class ProdutoDao
 		}
 	}
 	
-	public ProdInfo getProdInfo(String codigo) throws SQLException {
+	public ProdInfo getProdInfo(String codigo) throws SQLException 
+	{
 		List<ProdInfo> prodInfos = getProdInfos(codigo);
+		
 		if(ListUtils.isNullOrEmpty(prodInfos)) {
 			return new ProdInfo()
 					.setCodigo(codigo)
@@ -207,7 +209,7 @@ public class ProdutoDao
 					.setUtilizaCardapioDigital(false);
 		}
 		
-		return prodInfos.getFirst();
+		return prodInfos.get(0);
 	}
 
 	public List<ProdInfo> getProdInfos(String codigo) throws SQLException {

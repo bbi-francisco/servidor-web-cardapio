@@ -56,10 +56,10 @@ public class SalvarPedidosServiceTablet implements SalvarPedidosService {
 			validaComandaBloqueada.execute(comanda);
 			validaComandaFechada.execute(comanda, true);
 			
-			comandaRepository.verificarAbreComanda(comanda);
-			
 			validaIntervaloComanda.execute(comanda);
 			validaLimitePedido.execute(pedido);
+			
+			comandaRepository.verificarAbreComanda(comanda);
 			
 //			if(FormaAtendimento.COMANDA.equals(comanda.getFormaAtendimento())){
 //				new ValidaComandaTag(comanda).execute();

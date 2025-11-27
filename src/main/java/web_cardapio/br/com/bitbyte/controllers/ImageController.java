@@ -108,11 +108,7 @@ public class ImageController {
 			String placeholder = getPlaceholderImg();
 			
 
-			List<String> images = new ArrayList<>();
-			List<File> imageFiles = getImageRepository().getAllImages("estabelecimento");
-			for (File estabelecimento : imageFiles) {
-				images.add(estabelecimento.getName());
-			}
+			
 			
 			Map<String, String> imagesProd = produtoDao.getImages();
 			for(Entry<String, String> entry : imagesProd.entrySet()) 
@@ -120,17 +116,31 @@ public class ImageController {
 				String base64 = getImageRepository().getImageBase64(entry.getValue());
 				entry.setValue(base64);
 			}
+			
+			List<String> imagesEstabelecimento = getImages("estabelecimento");
+			List<String> imagesBanners = getImages("banners");
 
 			ImagesCardapio imagesCardapio = new ImagesCardapio()
 					.setCardapioPlaceholder(placeholder)
-					.setImagesEstabelecimento(images);
+					.setImagesEstabelecimento(imagesEstabelecimento)
+					.setImagesBanners(imagesBanners);
 
-			return new Retorno<ImagesCardapio>().setValue(imagesCardapio).setStatus(200).setMsg("OK");
+			return new Retorno<ImagesCardapio>()
+					.setValue(imagesCardapio)
+					.setStatus(200)
+					.setMsg("OK");
 
 		} catch (Exception e) {
 			return new Retorno<ImagesCardapio>().setStatus(500)
 					.setMsg("Erro ao baixar imagens do cardapio. " + e.getMessage());
 		}
+	}
+	
+	private List<String> getImages(String folder){
+		return getImageRepository()
+				.getAllImages(folder)
+				.stream().map((i)-> i.getName())
+				.toList();
 	}
 	
 	private String getPlaceholderImg() {
