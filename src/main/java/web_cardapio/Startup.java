@@ -45,7 +45,7 @@ import web_cardapio.br.com.bitbyte.scripts.ScriptsService;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class Startup {
 	
-	private static final String VERSION = "1.1.5";
+	private static final String VERSION = "1.1.6";
 	
 	private static JFrame frame = new JFrame("Web Cardapio - " + VERSION);
 	
@@ -55,8 +55,8 @@ public class Startup {
 		createFrame();
 	}
 
-	private static JFrame createFrame() {
-		
+	private static JFrame createFrame() 
+	{
 		frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300, 150);

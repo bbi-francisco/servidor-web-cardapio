@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,12 +23,10 @@ public class PerguntaDao {
 	@Autowired
 	private ConnectionFactory connectionFactory;
 	
-	private List<Pergunta> perguntas = new ArrayList<>();
-	private List<Alternativa> alternativas = new ArrayList<>();
-	private int lastIdPergunta = -1;
-	private Pergunta lastPergunta = null;
-	
-	public Questionario selectQuestionario() throws SQLException {
+	public Questionario selectQuestionario() throws SQLException 
+	{
+		
+		Map<Integer, Pergunta> perguntas = new HashMap<>();
 		
 		String sql = 
 				" SELECT " + 
@@ -47,25 +47,19 @@ public class PerguntaDao {
 			while(rs.next()) 
 			{
 				int idPergunta = rs.getInt("id_pergunta"); 
-				if(idPergunta != lastIdPergunta) 
+				if(!perguntas.containsKey(idPergunta)) 
 				{
-					fetchPergunta(lastPergunta);
-					newPerguntaContext(rs);
+					Pergunta pergunta = createPergunta(rs);
+					perguntas.put(idPergunta, pergunta);
 				}
 				
+				Pergunta p = perguntas.get(idPergunta);
 				Alternativa alternativa = createAlternativa(rs);
-				alternativas.add(alternativa);
+				p.getAlternativas().add(alternativa);
 			}
-			fetchPergunta(lastPergunta);
-			return new Questionario().setPerguntas(perguntas);
+			return new Questionario()
+					.setPerguntas(new ArrayList<>(perguntas.values()));
 		}
-	}
-	
-	private void newPerguntaContext(ResultSet rs) throws SQLException 
-	{
-		lastPergunta = createPergunta(rs);
-		lastIdPergunta = rs.getInt("id_pergunta"); 
-		alternativas = new ArrayList<>();
 	}
 	
 	private Alternativa createAlternativa(ResultSet rs) throws SQLException {
@@ -79,14 +73,8 @@ public class PerguntaDao {
 		Pergunta pergunta = new Pergunta()
 				.setPergunta(rs.getString("descricao_pergunta"))
 				.setId(rs.getInt("id_pergunta"))
-				.setOrdem(rs.getInt("ordem_pergunta"));
+				.setOrdem(rs.getInt("ordem_pergunta"))
+				.setAlternativas(new ArrayList<>());
 		return pergunta;
-	}
-	
-	private void fetchPergunta(Pergunta pergunta) {
-		if(pergunta != null) {
-			pergunta.setAlternativas(alternativas);
-			perguntas.add(pergunta);
-		}
 	}
 }

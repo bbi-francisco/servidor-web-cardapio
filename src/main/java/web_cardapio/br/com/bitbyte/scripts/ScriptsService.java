@@ -61,6 +61,7 @@ public class ScriptsService {
     {
         List<Parametro> parametros = new ArrayList<>();
         parametros.add(createParametroCardapioDigitalUtilizaGrupo());
+        parametros.add(createParametroCardapioDigitalFechaConta());
         return parametros;
     }
     
@@ -72,6 +73,18 @@ public class ScriptsService {
     			.setTipoSn("S")
     			.setDefaultValue("N")
     			.setPalavraChave("CARDAPIO DIGITAL UTILIZA GRUPO")
+    			.setGrupo("Cardapio Digital")
+    			.setTipo("S");
+    }
+    
+    private Parametro createParametroCardapioDigitalFechaConta() 
+    {
+    	return new Parametro()
+    			.setParametro("CARDAPIO_DIGITAL_FECHA_CONTA")
+    			.setDescricao("Parametro que controla se vai fechar conta no cardapio digital")
+    			.setTipoSn("S")
+    			.setDefaultValue("S")
+    			.setPalavraChave("CARDAPIO DIGITAL FECHA CONTA")
     			.setGrupo("Cardapio Digital")
     			.setTipo("S");
     }
