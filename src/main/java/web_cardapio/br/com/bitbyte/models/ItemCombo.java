@@ -14,7 +14,7 @@ public class ItemCombo
 	private String codigo;
 	private String codigoPesquisa;
 	private BigDecimal vrUnit;
-	private int qtd;
+	private double qtd;
 	private String codigoPai;
 	private String descricaoPai;
 	private String descricaoGrupo;
@@ -114,12 +114,12 @@ public class ItemCombo
 		return this;
 	}
 
-	public int getQtd()
+	public double getQtd()
 	{
 		return qtd;
 	}
 
-	public ItemCombo setQtd(int quantidade)
+	public ItemCombo setQtd(double quantidade)
 	{
 		this.qtd = quantidade;
 		return this;

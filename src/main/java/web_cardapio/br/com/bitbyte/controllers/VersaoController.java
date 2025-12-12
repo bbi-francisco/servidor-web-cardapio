@@ -4,11 +4,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.nio.file.Files;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -64,30 +59,31 @@ public class VersaoController {
 		return gson.toJson(retMsg);
 	}
 	
-	@GetMapping("instalador/{aplicacao}")
-	public Retorno<AppInstaller> getInstaller(@PathVariable("aplicacao") String aplicacao)
-	{
-		System.out.println("BAIXANDO...");
-		Retorno<AppInstaller> retMsg = new Retorno<>();
-		
-		try
-		{
-			AppInstaller appVersion = versaoRepository.getInstaller(aplicacao);
-			retMsg.setValue(appVersion);
-			if(appVersion == null) {
-				retMsg.setMsg("Instalador da versão não encontrada.");
-				retMsg.setStatus(404);
-			}else {
-				retMsg.setStatus(200);
-				retMsg.setMsg("Instalador da versão recuperada com sucesso.");
-			}
-		}catch(Exception e) {
-			retMsg.setMsg(e.getMessage());
-			retMsg.setStatus(500);
-			log.info(e.getMessage());
-		}
-		return retMsg;
-	}
+//	@GetMapping("instalador/{aplicacao}")
+//	public Retorno<AppInstaller> getInstaller(@PathVariable("aplicacao") String aplicacao)
+//	{
+//		System.out.println("BAIXANDO...");
+//		Retorno<AppInstaller> retMsg = new Retorno<>();
+//		
+//		try
+//		{
+//			AppInstaller appVersion = versaoRepository.getInstaller(aplicacao);
+//			retMsg.setValue(appVersion);
+//			if(appVersion == null) {
+//				retMsg.setMsg("Instalador da versão não encontrada.");
+//				retMsg.setStatus(404);
+//			}else {
+//				retMsg.setStatus(200);
+//				retMsg.setMsg("Instalador da versão recuperada com sucesso.");
+//			}
+//		}catch(Exception e) {
+//			retMsg.setMsg(e.getMessage());
+//			retMsg.setStatus(500);
+//			log.info(e.getMessage());
+//		}
+//		return retMsg;
+//	}
+//	
 	
 	@GetMapping("arquivo/{aplicacao}")
 	public ResponseEntity<Resource> getInstallerFile(@PathVariable("aplicacao") String aplicacao) {
@@ -105,17 +101,14 @@ public class VersaoController {
 	        Resource resource = new InputStreamResource(new FileInputStream(file));
 
 	        // Define o tipo de conteúdo (pode ser ajustado conforme o tipo real do instalador)
-	        String contentType = Files.probeContentType(file.toPath());
-	        if (contentType == null) {
-	            contentType = "application/octet-stream"; // tipo genérico
-	        }
-
+	        String contentType = "application/vnd.android.package-archive";
+	        
 	        // Retorna o arquivo para download
 	        return ResponseEntity.ok()
+	        		.contentLength(file.length())
 	                .contentType(MediaType.parseMediaType(contentType))
-	                .header(HttpHeaders.CONTENT_DISPOSITION,
-	                        "attachment; filename=\"" + file.getName() + "\"")
-	                .body(resource);
+	                .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + file.getName() + "\"")
+	                .body(resource);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 
 	    } catch (Exception e) {
 	        e.printStackTrace();
@@ -124,5 +117,9 @@ public class VersaoController {
 	    }
 	}
 	
-
+	@GetMapping("cardapio")
+	public ResponseEntity<Resource> getCardapioFile()
+	{
+		return getInstallerFile("CARDAPIO_TABLET");
+	}
 }

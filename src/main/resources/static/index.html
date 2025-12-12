@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Web-Cardápio BBIFood</title>
+</head>
+<body>
+    <h1>Web-Cardápio BBIFood</h1>
+    <input type="button" id="downloadBtn" value="Download">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() 
+     		{
+        	document.getElementById("downloadBtn").addEventListener("click", function() {
+        	    const senha = prompt('Informe a senha');
+        	    if (senha === 'adm%bbi' || senha === 'bbifood') {
+        	        // Redireciona o navegador para o arquivo
+        	        window.location.href = '/web_cardapio/versao/cardapio';
+        	    } else {
+        	        alert("Senha incorreta!");
+        	    }
+        	});
+
+
+      
+        });
+
+    </script>
+</body>
+</html>

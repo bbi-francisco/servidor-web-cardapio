@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -27,6 +28,7 @@ import web_cardapio.br.com.bitbyte.models.ImagesCardapio;
 import web_cardapio.br.com.bitbyte.models.Retorno;
 import web_cardapio.br.com.bitbyte.repositories.ImageRepository;
 import web_cardapio.br.com.bitbyte.repositories.ImageRepositoryFactory;
+import web_cardapio.br.com.bitbyte.utils.ListUtils;
 import web_cardapio.br.com.bitbyte.utils.MyFileUtils;
 import web_cardapio.br.com.bitbyte.utils.StringUtils;
 
@@ -44,6 +46,8 @@ public class ImageController {
 	private ProdutoDao produtoDao;
 	
 	private ImageRepository imageRepository;
+	
+	private static final Logger log = Logger.getLogger(ImageController.class);
 	
 	public ImageRepository getImageRepository() {
 		if(imageRepository == null) {
@@ -107,10 +111,8 @@ public class ImageController {
 		try {
 			String placeholder = getPlaceholderImg();
 			
-
-			
-			
 			Map<String, String> imagesProd = produtoDao.getImages();
+			
 			for(Entry<String, String> entry : imagesProd.entrySet()) 
 			{
 				String base64 = getImageRepository().getImageBase64(entry.getValue());
@@ -118,6 +120,7 @@ public class ImageController {
 			}
 			
 			List<String> imagesEstabelecimento = getImages("estabelecimento");
+			
 			List<String> imagesBanners = getImages("banners");
 
 			ImagesCardapio imagesCardapio = new ImagesCardapio()
@@ -131,16 +134,32 @@ public class ImageController {
 					.setMsg("OK");
 
 		} catch (Exception e) {
+			
+			String msg = "Erro ao baixar imagens do cardapio. " + e.getMessage();
+			log.info(msg);
 			return new Retorno<ImagesCardapio>().setStatus(500)
-					.setMsg("Erro ao baixar imagens do cardapio. " + e.getMessage());
+					.setMsg(msg);
 		}
 	}
 	
 	private List<String> getImages(String folder){
-		return getImageRepository()
-				.getAllImages(folder)
-				.stream().map((i)-> i.getName())
-				.toList();
+		List<File> imagens = getImageRepository()
+				.getAllImages(folder);
+		
+		if(ListUtils.isNullOrEmpty(imagens)) {
+			return Collections.emptyList();
+		}
+		
+		List<String> names = new ArrayList<>();
+		
+		for(int i = 0; i < imagens.size(); i++) 
+		{
+			String name = imagens.get(i).getName();
+			
+			names.add(name);
+		}
+		
+		return names;
 	}
 	
 	private String getPlaceholderImg() {

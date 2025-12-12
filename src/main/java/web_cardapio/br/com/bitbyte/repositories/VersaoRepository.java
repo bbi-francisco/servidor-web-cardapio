@@ -40,25 +40,25 @@ public class VersaoRepository {
 		return version;
 	}
 
-	public AppInstaller getInstaller(String applicationName) throws IOException {
-		String diretorioInstalacao = System.getProperty("user.dir");
-		String path = diretorioInstalacao + "\\" + applicationName + ".apk";
-		
-//		String path = "C:\\bbifood\\web_cardapio\\" +applicationName + ".apk";
-		
-		log.info("Diretorio instalacao = " +path);
-		File file = new File(path);
-		if (!file.exists()) {
-			throw new RuntimeException("Arquivo de instalação: " + path + " não existente. ");
-		}
-		
-		String base64 = MyFileUtils.encodeFileToBase64(file);
-
-		AppInstaller installer = new AppInstaller().setApplicationName(applicationName)
-				.setInstallerBase64(base64);
-
-		return installer;
-	}
+//	public AppInstaller getInstaller(String applicationName) throws IOException {
+//		String diretorioInstalacao = System.getProperty("user.dir");
+//		String path = diretorioInstalacao + "\\" + applicationName + ".apk";
+//		
+////		String path = "C:\\bbifood\\web_cardapio\\" +applicationName + ".apk";
+//		
+//		log.info("Diretorio instalacao = " +path);
+//		File file = new File(path);
+//		if (!file.exists()) {
+//			throw new RuntimeException("Arquivo de instalação: " + path + " não existente. ");
+//		}
+//		
+//		String base64 = MyFileUtils.encodeFileToBase64(file);
+//
+//		AppInstaller installer = new AppInstaller().setApplicationName(applicationName)
+//				.setInstallerBase64(base64);
+//
+//		return installer;
+//	}
 	
 	public File getInstallerFile(String applicationName) throws IOException {
 		String diretorioInstalacao = System.getProperty("user.dir");

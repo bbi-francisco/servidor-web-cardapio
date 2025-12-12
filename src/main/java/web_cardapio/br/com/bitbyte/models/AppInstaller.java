@@ -8,7 +8,7 @@ import web_cardapio.br.com.bitbyte.utils.StringUtils;
 public class AppInstaller {
 	
 	private String applicationName;
-	private String installerBase64;
+	private String url;
 	
 	public String getApplicationName() {
 		return StringUtils.getEmptyIfNull(applicationName);
@@ -18,10 +18,10 @@ public class AppInstaller {
 		return this;
 	}
 	public String getInstallerBase64() {
-		return StringUtils.getEmptyIfNull(installerBase64);
+		return StringUtils.getEmptyIfNull(url);
 	}
 	public AppInstaller setInstallerBase64(String installerBase64) {
-		this.installerBase64 = installerBase64;
+		this.url = installerBase64;
 		return this;
 	}
 

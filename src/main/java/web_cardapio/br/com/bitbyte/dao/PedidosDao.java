@@ -232,7 +232,7 @@ public class PedidosDao {
 				itemPedido.setCodigo(rs.getString("codprod"));
 				itemPedido.setCodigoPesquisa(rs.getString("codprod_2"));
 				itemPedido.setDescricao(rs.getString("descricao"));
-				itemPedido.setQtd(rs.getInt("qtd_prod"));
+				itemPedido.setQtd(rs.getDouble("qtd_prod"));
 				itemPedido.setVrUnit(BigDecimal.valueOf(rs.getDouble("vr_unit")));
 				
 				Adicionais adicionais = new Adicionais();
