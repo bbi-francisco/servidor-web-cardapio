@@ -23,12 +23,12 @@ public class TamanhoPizza {
     }
 
 
-    public String getAbreviacaoTamanhoPizza() {
+    public String getAbreviacao() {
         return abreviacao != null ? abreviacao : "";
     }
 
-    public void setAbreviacao(String tamanhoPizza) {
-        this.abreviacao = tamanhoPizza;
+    public void setAbreviacao(String abreviacao) {
+        this.abreviacao = abreviacao;
     }
 
 

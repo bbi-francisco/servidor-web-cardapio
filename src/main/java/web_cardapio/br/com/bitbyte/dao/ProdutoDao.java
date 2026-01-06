@@ -64,7 +64,7 @@ public class ProdutoDao
 			" COALESCE(p.img2, '') AS img2, " + 
 			" COALESCE(p.img3, '') AS img3, " +
 			" p.bebida_alcoolica, " + 
-			" COALESCE(p.utiliza_cardapio_digital, '') AS produto_utiliza_cardapio, " +
+			" COALESCE(p.utiliza_cardapio_digital, 'N') AS produto_utiliza_cardapio, " +
 			" p.limitevenda, " +
 			" COALESCE(p.montagem, 'N') as montagem, " +
 			" p.disponivel, " +
@@ -78,7 +78,7 @@ public class ProdutoDao
 			" COALESCE(p.perg_venda_sugestiva, 'N') as perg_venda_sugestiva " +
 			" FROM tbprod p " + 
 			" LEFT JOIN tbgrupo g ON g.codigo = p.grupo " +
-			" LEFT JOIN tbsubgru sg ON sg.codigo = sg.codigo "+
+			" LEFT JOIN tbsubgru sg ON sg.codigo = p.subgrupo "+
 			" LEFT JOIN tbtamanho_pizza piz ON piz.codigo = p.codtam_pizza " +
 			" LEFT JOIN tbalergias al ON al.cod_prod = p.codigo " +
 			where + 
@@ -181,9 +181,6 @@ public class ProdutoDao
 			" COALESCE(p.img1,'') AS img1 " + 
 			" FROM tbprod p " +
 			" WHERE p.utiliza_cardapio_digital = 'S' AND p.disponivel = 'S'";
-		
-		
-		List<Produto> produtos = new ArrayList<>();
 		
 		try(Connection conn = connectionFactory.getConnection();
 			PreparedStatement pst = conn.prepareStatement(sql);

@@ -51,7 +51,7 @@ import web_cardapio.br.com.bitbyte.services.QrCodeService;
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 public class Startup {
 	
-	private static final String VERSION = "1.2.0";
+	private static final String VERSION = "1.2.1";
 	
 	private static JFrame frame = new JFrame("Web Cardapio - " + VERSION);
 	
@@ -97,7 +97,7 @@ public class Startup {
        
             try {
             	String ip = InetAddress.getLocalHost().getHostAddress();
-            	int porta = 4041;
+            	int porta = 4040;
             	
             	log.info("PORTA: " +porta);
                 String texto = "http://" +ip+ ":" +porta + "/web_cardapio/versao/cardapio"; // conteúdo do QR Code
@@ -157,7 +157,7 @@ public class Startup {
 		JPasswordField pf = createPasswordField();
     	int result = JOptionPane.showConfirmDialog(frame, 
     			pf, 
-    			"Digite a senha", 
+    			"Digite a senha",
     			JOptionPane.OK_CANCEL_OPTION, 
     			JOptionPane.PLAIN_MESSAGE, 
     			new ImageIcon(getImg()));
